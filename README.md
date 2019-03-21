@@ -8,7 +8,7 @@
 
 ## 2019年心路历程
 - [PNG图片压缩原理--屌丝的眼泪](https://github.com/airuikun/blog/issues/1)
-- [webpack工程化打包原理解析与实现](https://github.com/lcxfs1991/blog/issues/30)
-- [前端人工智能：通过机器学习推导函数方程式](https://github.com/lcxfs1991/blog/issues/29)
-- [KOA2框架原理解析和实现](https://github.com/lcxfs1991/blog/issues/30)
+- [webpack工程化打包原理解析与实现](https://github.com/airuikun/blog/issues/1)
+- [前端人工智能：通过机器学习推导函数方程式](https://juejin.im/post/5c24c64b6fb9a049ec6b22fe)
+- [KOA2框架原理解析和实现](https://github.com/airuikun/blog/issues/1)
 
