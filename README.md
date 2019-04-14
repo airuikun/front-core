@@ -1,4 +1,4 @@
-# 第一名的小蝌蚪
+## 第一名的小蝌蚪
 
 > 艾瑞坤，前端低级切菜工程师。   <br/>
 > 2019：腾讯新闻<br/>
@@ -14,3 +14,7 @@
 - [KOA2框架原理解析和实现](https://github.com/airuikun/blog/issues/2)
 
 
+## 交流
+
+欢迎关注我的个人公众号，讲述了一个前端屌丝逆袭的心路历程，共勉。
+![image](https://github.com/airuikun/blog/raw/master/images/weekly/diaosierweima.jpg)
