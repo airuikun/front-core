@@ -1,10 +1,10 @@
 ## 第一名的小蝌蚪
 
 > 小蝌蚪，高级前端工程师。   <br/>
-> 2019：腾讯-TNFE<br/>
-> 2018：阿里淘宝技术部-FED<br/>
+> 2019：腾讯<br/>
+> 2018：阿里淘宝技术部<br/>
 > 2013~2017：阿里移动事业部<br/>
-> [微博](https://www.weibo.com/airuikun/) | [知乎](https://www.zhihu.com/people/ai-rui-kun-95/) | [Github](https://github.com/airuikun)
+> [知乎](https://www.zhihu.com/people/ai-rui-kun-95/) | [Github](https://github.com/airuikun)
 
 ## 2019年心路历程
 - [git时光穿梭机--女神的侧颜](https://github.com/airuikun/blog/issues/5)
