@@ -7,6 +7,8 @@
 > [知乎](https://www.zhihu.com/people/ai-rui-kun-95/) | [Github](https://github.com/airuikun)
 
 ## 2019年心路历程
+
+- [轮椅上的程序员--夜店传说](https://github.com/airuikun/blog/issues/6)
 - [git时光穿梭机--女神的侧颜](https://github.com/airuikun/blog/issues/5)
 - [PNG图片压缩原理---屌丝的眼泪](https://github.com/airuikun/blog/issues/1)
 - [前端人工智能：通过机器学习推导函数方程式](https://github.com/airuikun/blog/issues/3)
