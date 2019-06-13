@@ -10,7 +10,7 @@
 
 - [轮椅上的程序员--夜店传说](https://github.com/airuikun/blog/issues/6)
 - [git时光穿梭机--女神的侧颜](https://github.com/airuikun/blog/issues/5)
-- [PNG图片压缩原理---屌丝的眼泪](https://github.com/airuikun/blog/issues/1)
+- [PNG图片压缩原理--屌丝的眼泪](https://github.com/airuikun/blog/issues/1)
 - [前端人工智能：通过机器学习推导函数方程式](https://github.com/airuikun/blog/issues/3)
 - [webpack工程化打包原理解析与实现](https://github.com/airuikun/blog/issues/4)
 - [KOA2框架原理解析和实现](https://github.com/airuikun/blog/issues/2)
