@@ -8,7 +8,7 @@
 
 ## 2019年心路历程
 
-- [小蝌蚪传记：夜店传说](https://github.com/airuikun/blog/issues/6)
+- [小蝌蚪传记：加班](https://github.com/airuikun/blog/issues/6)
 - [小蝌蚪传记：git时光穿梭机--女神的侧颜](https://github.com/airuikun/blog/issues/5)
 - [小蝌蚪传记：PNG图片压缩原理--屌丝的眼泪](https://github.com/airuikun/blog/issues/1)
 - [前端人工智能：通过机器学习推导函数方程式](https://github.com/airuikun/blog/issues/3)
