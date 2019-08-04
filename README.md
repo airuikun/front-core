@@ -1,7 +1,7 @@
 ## 第一名的小蝌蚪
 
 > 小蝌蚪，高级前端工程师。   <br/>
-> 2019：secret<br/>
+> 2019：保密<br/>
 > 2018：阿里淘宝技术部<br/>
 > 2013~2017：阿里移动事业部<br/>
 > [知乎](https://www.zhihu.com/people/ai-rui-kun-95/) | [Github](https://github.com/airuikun)
