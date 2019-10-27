@@ -4,10 +4,11 @@
 > 2019：保密<br/>
 > 2018：阿里淘宝技术部<br/>
 > 2013~2017：阿里移动事业部<br/>
-> [知乎](https://www.zhihu.com/people/ai-rui-kun-95/) | [Github](https://github.com/airuikun)
+
 
 ## 2019年心路历程
 
+- [小蝌蚪传记：200行代码实现前端无痕埋点——顶级渣男](https://github.com/airuikun/blog/issues/8)
 - [小蝌蚪传记：端口转发——夜店传说](https://github.com/airuikun/blog/issues/6)
 - [小蝌蚪传记：git时光穿梭机——女神的侧颜](https://github.com/airuikun/blog/issues/5)
 - [小蝌蚪传记：PNG图片压缩原理——屌丝的眼泪](https://github.com/airuikun/blog/issues/1)
