@@ -6,6 +6,12 @@
 > 2013~2017：阿里移动事业部<br/>
 
 
+
+
+## 2020年心路历程
+
+- [小蝌蚪传记：基于nodejs的云端热部署原理与实现——富婆的爱](https://github.com/airuikun/blog/issues/10)
+
 ## 2019年心路历程
 
 - [小蝌蚪传记：200行代码实现前端无痕埋点——顶级渣男](https://github.com/airuikun/blog/issues/8)
