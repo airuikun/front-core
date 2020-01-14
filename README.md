@@ -10,7 +10,7 @@
 
 ## 2020年心路历程
 
-- [小蝌蚪传记：60行代码实现nodejs线上模块热部署——富婆的爱](https://github.com/airuikun/blog/issues/10)
+- [小蝌蚪传记：nodejs线上模块热部署原理与实现——富婆的爱](https://github.com/airuikun/blog/issues/10)
 
 ## 2019年心路历程
 
