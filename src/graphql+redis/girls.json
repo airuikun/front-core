@@ -1,0 +1,20 @@
+{
+    "girls": [{
+        "id": 1,
+        "name": "女神一",
+        "iphone": 12345678910,
+        "weixin": "xixixixi",
+        "height": 175,
+        "school": "剑桥大学",
+        "wheel": [{ "name": "备胎1号", "money": "24万元" }, { "name": "备胎2号", "money": "26万元" }]
+    },
+    {
+        "id": 2,
+        "name": "女神二",
+        "iphone": 12345678910,
+        "weixin": "hahahahah",
+        "height": 168,
+        "school": "哈佛大学",
+        "wheel": [{ "name": "备胎3号", "money": "80万元" }, { "name": "备胎4号", "money": "200万元" }]
+    }]
+}

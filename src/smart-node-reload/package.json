@@ -1,0 +1,11 @@
+{
+  "name": "hotreload",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "第一名的小蝌蚪",
+  "license": "ISC"
+}

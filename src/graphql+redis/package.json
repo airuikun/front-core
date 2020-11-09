@@ -1,0 +1,16 @@
+{
+  "name": "graphqlproject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "第一名的小蝌蚪",
+  "license": "ISC",
+  "dependencies": {
+    "graphql": "15.4.0",
+    "node-schedule": "1.3.2",
+    "redis": "3.0.2"
+  }
+}

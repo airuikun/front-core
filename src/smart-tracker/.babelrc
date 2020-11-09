@@ -1,0 +1,22 @@
+{
+    "presets": [
+        [
+            "@babel/preset-env",
+            {
+                "targets": {
+                    "browsers": [
+                        "> 1%",
+                        "last 2 versions",
+                        "ie >= 9",
+                        "iOS >= 8",
+                        "Android >= 4"
+                    ]
+                }
+            }
+        ]
+    ],
+    "plugins": [        
+        "@babel/plugin-transform-runtime",
+        "@babel/plugin-proposal-class-properties"
+    ]
+}
