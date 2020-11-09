@@ -10,6 +10,8 @@
 
 ## 2020年心路历程
 
+
+- [小蝌蚪传记：前端菜鸡让接口提速50%的实践与原理——云备胎](https://github.com/airuikun/blog/issues/12)
 - [小蝌蚪日记：通过console.log高仿FBI Warning](https://github.com/airuikun/blog/issues/11)
 - [小蝌蚪传记：nodejs线上模块热部署原理与实现——富婆的爱](https://github.com/airuikun/blog/issues/10)
 
