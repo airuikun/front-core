@@ -1,0 +1,220 @@
+@import "../../style/variables.less";
+@import "../../style/mixins/index.less";
+
+@w-input:~"w-input";
+
+.@{w-input} {
+  position: relative;
+  font-size: 12px;
+  &-inner {
+    // iOS 中使用appearance修改输入框样式
+    appearance: none;
+    background-color: #fff;
+    background-image: none;
+    border-radius: @border-radius-base;
+    border: 0 solid #e8e8e8;
+    box-sizing: border-box;
+    color: #1f2d3d;
+    font-size: inherit;
+    width: 100%;
+    height: 30px;
+    line-height: 14px;
+    outline: 0;
+    padding: 3px 10px;
+    display: inline-block;
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 0 rgba(0, 0, 0, 0), inset 0 0 0 1px rgba(23, 23, 23, 0.15), inset 0 1px 1px rgba(25, 25, 25, 0.2);
+    transition: all .3s;
+    &::placeholder {
+      color: #ccc;
+      font-weight: @input-font-weight;
+    }
+    &:hover {
+      box-shadow: 0 0 0 0 #0fa120, 0 0 0 0 rgba(0, 0, 0, 0), inset 0 0 0 1px #0fa120, inset 0 1px 1px rgba(25, 25, 25, 0.2);
+    }
+    &:focus {
+      box-shadow: 0 0 0 0 #009813, 0 0 0 2px rgba(0, 165, 21, 0.25), inset 0 0 0 1px #0fa120, inset 0 1px 1px rgba(31, 31, 31, 0.2);
+    }
+    &:focus&::placeholder {
+      color: #d5d5d5;
+    }
+    &:disabled {
+      cursor: @cursor-disabled;
+      color: #969696;
+      box-shadow: 0 0 0 1px #e4e4e4;
+    }
+    &.w-input-p-left {
+      padding-left: 30px;
+    }
+    &.w-input-p-right {
+      padding-right: 24px;
+    }
+  }
+}
+
+.@{w-input} {
+  &.w-disabled {
+    color: #969696;
+    position: relative;
+    &:before {
+      cursor: @cursor-disabled;
+      content: '';
+      display: inline-block;
+      position: absolute;
+      z-index: 1000;
+      background: rgba(0, 0, 0, 0.04);
+      border-radius: @border-radius-base;
+      height: 100%;
+      width: 100%;
+    }
+  }
+  &.textarea&-inner {
+    max-width: 100%;
+    height: auto;
+    vertical-align: bottom;
+    padding: 10px;
+    line-height: 18px;
+  }
+  &-icon {
+    input {
+      line-height: 30px;
+    }
+    &-left, &-right {
+      position: absolute;
+      width: 30px;
+      height: 100%;
+      text-align: center;
+      vertical-align: middle;
+      > i, &::after {
+        vertical-align: middle;
+      }
+      &::after {
+        content: '';
+        display: inline-block;
+        width: 0;
+        height: 100%;
+      }
+    }
+    &-inner:before {
+      position: relative;
+    }
+    .event {
+      cursor: pointer;
+      &:hover {
+        color: #0fa120;
+      }
+    }
+  }
+  &&-icon-left ~ &-inner {
+    padding-left: 30px;
+  }
+  &-icon-right {
+    right: 0;
+    top: 0;
+  }
+
+  &-large &-inner {
+    height: 36px;
+  }
+  &-large &-icon-inner {
+    width: 100%;
+    font-size: 16px;
+  }
+  &-large &-icon-inner ~ &-inner {
+    padding-left: 36px;
+  }
+
+  &-small &-inner {
+    height: 26px;
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+  &-small &-icon-inner {
+    width: 100%;
+  }
+  &-small &-icon-inner ~ &-inner {
+      padding-left: 26px;
+  }
+
+  &-mini &-inner {
+    height: 20px;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  &-mini &-inner&-p-right {
+    padding-right: 24px;
+  }
+  &-mini &-inner&-p-left {
+    padding-left: 20px;
+  }
+  &-mini &-icon-left {
+    width: 24px;
+  }
+  &-mini &-icon-right {
+    width: 24px;
+  }
+  .w-input-mini &-icon-inner {
+      width: 100%;
+  }
+}
+
+.@{w-input}-addon {
+  display: table;
+  .@{w-input}-inner {
+    position: relative;
+    z-index: 1;
+    &.addon-after {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+    &.addon-before {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+  }
+  .w-btn {
+    margin: -7px -12px -4px;
+    height: 100%;
+    line-height: 1;
+    border-color: transparent;
+    background-color: transparent;
+    border-radius: 0;
+    color: inherit;
+  }
+  .w-select {
+    margin: -9px -11px -8px;
+  }
+  .w-select {
+    text-align: left;
+    .w-input-inner {
+      background: transparent;
+      box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    }
+    .w-input-icon-right {
+      position: absolute;
+      z-index: 9;
+    }
+  }
+  &-before, &-after {
+    display: table-cell;
+    padding: 4px 11px;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1;
+    color: rgba(0, 0, 0, 0.65);
+    text-align: center;
+    background-color: #fafafa;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    position: relative;
+  }
+  &-before {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right-width: 0;
+  }
+  &-after {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-left-width: 0;
+  }
+}

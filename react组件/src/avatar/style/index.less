@@ -1,0 +1,56 @@
+
+@avatar-prefix-cls: ~"w-avatar";
+
+.@{avatar-prefix-cls} {
+  display: inline-block;
+  text-align: center;
+  background: #ccc;
+  color: #fff;
+  vertical-align: middle;
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+  font-size: 18px;
+  width: 30px;
+  height: 30px;
+  line-height: 31px;
+  border-radius: 3px;
+  > * {
+    line-height: inherit;
+  }
+  & + .@{avatar-prefix-cls} {
+    margin-left: 5px;
+  }
+  &-mini {
+    height: 18px;
+    width: 18px;
+    font-size: 12px;
+  }
+  &-mini, &-small > * {
+    line-height: 18px;
+  }
+  &-small {
+    height: 24px;
+    width: 24px;
+    font-size: 12px;
+  }
+  &-small, &-small > * {
+    line-height: 24px;
+  }
+  &-large {
+    height: 40px;
+    width: 40px;
+    font-size: 24px;
+  }
+  &-large, &-large > * {
+    line-height: 36px;
+  }
+  &-circle {
+    border-radius: 50%;
+  }
+  > img {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+}

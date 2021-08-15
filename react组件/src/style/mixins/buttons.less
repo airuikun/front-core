@@ -1,0 +1,74 @@
+.button-variant(@color, @background, @border) {
+  color: @color;
+  background-color: @background;
+  border-color: @border;
+  &:focus,
+  &.focus {
+    color: @color;
+    background-color: darken(@background, 6%);
+    border-color: @border;
+  }
+  &:hover {
+    color: @color;
+    background-color: darken(@background, 10%);
+    border-color: darken(@border, 12%);
+  }
+  &:active,
+  &.active {
+    color: @color;
+    background-color: darken(@background, 10%);
+    border-color: @border;
+    background-image: none;
+  }
+
+  &.disabled,
+  &[disabled] {
+    &:hover,
+    &:focus,
+    &.focus,
+    &:active,
+    &.active {
+      background-color: @background;
+      border-color: @border;
+    }
+    &.w-btn-default, &.w-btn-default:hover {
+      opacity: 1;
+      color: lighten(@gray-base, 75%);
+      background-color: lighten(@gray-base, 95%);
+    }
+  }
+}
+.button-loading(@size,@bg-color,@bg-color-inverse) {
+  &.w-btn-loading&:before {
+    width: @size;
+    height: @size;
+    border: solid @bg-color-inverse 1px;
+    border-radius: @size;
+    border-top-color: @bg-color;
+    border-left-color: @bg-color;
+  }
+}
+.button-size-loading(@top,@size) {
+  &.w-btn-loading&:before {
+    position: relative;
+    top: @top;
+    width: @size;
+    height: @size;
+  }
+}
+// Button sizes
+.button-size(@padding-vertical, @padding-horizontal, @font-size, @line-height, @border-radius) {
+  padding: @padding-vertical @padding-horizontal;
+  font-size: @font-size;
+  line-height: @line-height;
+  border-radius: @border-radius;
+}
+// WebKit-style focus
+.tab-focus() {
+  // Default
+  // outline:thin dotted;
+  // // WebKit
+  // outline:5px auto -webkit-focus-ring-color;
+  // outline-offset:-2px;
+  // outline: 0;
+}

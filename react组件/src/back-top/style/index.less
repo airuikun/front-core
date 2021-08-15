@@ -1,0 +1,37 @@
+.w-back-top {
+  display: inline-block;
+  transition: opacity 0.2s linear 0s, visibility;
+  line-height: 1.0;
+  text-align: center;
+  cursor: pointer;
+  &.bordered {
+    border: 1px solid #dddee1;
+  }
+  &.rectangle {
+    padding: 5px;
+    &.radius {
+      border-radius: 3px;
+    }
+  }
+  &.circle {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &:hover {
+    border-color: #9dbee0;
+  }
+  &-text {
+    display: block;
+    font-size: 12px;
+  }
+  &-fixed {
+    position: fixed;
+    z-index: 1006;
+    right: 50px;
+    bottom: 50px;
+  }
+}

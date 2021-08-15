@@ -1,0 +1,24 @@
+{
+  "name": "davinci-ui",
+  "version": "1.0.1",
+  "description": "",
+  "main": "./build/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "babel --watch ./src --out-dir ./build"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "react": "15.6.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-plugin-transform-runtime": "*",
+    "babel-plugin-transform-decorators-legacy": "*",
+    "babel-preset-env": "1.6.1"
+  }
+}

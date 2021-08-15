@@ -1,0 +1,41 @@
+@import "../../style/variables.less";
+@import "../../style/mixins/index.less";
+
+.w-notification-warpper {
+  position: fixed;
+  z-index: 1010;
+  width: 330px;
+  &.topLeft {
+    top: 10px;
+    left: 10px;
+  }
+  &.topRight {
+    top: 10px;
+    right: 10px;
+  }
+  &.bottomLeft {
+    bottom: 10px;
+    left: 10px;
+  }
+  &.bottomRight {
+    bottom: 10px;
+    right: 10px;
+  }
+}
+
+.w-notification {
+  box-shadow: 0 1px 6px rgba(0, 0, 0, .2);
+  &.w-alert-default,&.w-alert-success,&.w-alert-info,&.w-alert-warning,&.w-alert-error {
+    background-color: #fff;
+    border-color: transparent;
+  }
+  .w-alert-description {
+    color: #52575c;
+  }
+  .w-alert-close-icon {
+    font-size: 18px;
+    right: 15px;
+    top: 5px;
+    color: @alert-default-text;
+  }
+}

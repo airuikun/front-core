@@ -1,0 +1,73 @@
+.w-animate {
+  transition: all 0.3s ease;
+  &.is-down {
+    &.is-mounting { // 安装
+      transform: translate3d(0, -100%, 0);
+    }
+    &.is-mounted { // 安装完
+      transform: translate3d(0, 0, 0);
+    }
+    &.is-unmounting { // 卸载
+      transform: translate3d(0, -100%, 0);
+    }
+    &.is-unmounted { // 卸载完
+      transform: translate3d(0, -100%, 0);
+    }
+  }
+  &.is-up {
+    &.is-mounting {
+      transform: translate3d(0, 100%, 0);
+    }
+    &.is-mounted {
+      transform: translate(0, 0);
+    }
+    &.is-unmounting {
+      transform: translate(0, 100%);
+    }
+    &.is-unmounted {
+      transform: translate(0, 100%);
+    }
+  }
+  &.is-right {
+    &.is-mounting, &.is-unmounting, &.is-unmounted {
+      transform: translate3d(100%, 0, 0);
+    }
+    &.is-mounted {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  &.is-left {
+    &.is-mounting, &.is-unmounting, &.is-unmounted {
+      transform: translate3d(-100%, 0, 0);
+    }
+    &.is-mounted {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  &.is-fadeIn {
+    &.is-mounting, &.is-unmounting, &.is-unmounted {
+      opacity: 0;
+    }
+    &.is-mounted {
+      opacity: 1;
+    }
+  }
+  &.is-height {
+    overflow: hidden;
+    &.is-mounting, &.is-unmounting, &.is-unmounted { // 安装
+      height: 0;
+    }
+    &.is-mounted { // 安装完
+      height: 100%;
+    }
+  }
+  &.is-width {
+    overflow: hidden;
+    &.is-mounting, &.is-unmounting, &.is-unmounted { // 安装
+      width: 0;
+    }
+    &.is-mounted { // 安装完
+      width: 100%;
+    }
+  }
+}

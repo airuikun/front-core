@@ -1,0 +1,391 @@
+@import "../../style/variables.less";
+@import "../../style/mixins/index.less";
+
+@w-menu:~"w-menu";
+@w-sub-menu:~"w-sub-menu";
+@w-menu-item-group:~"w-menu-item-group";
+
+.@{w-menu} {
+  width: 100%;
+  outline: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  z-index: 1000;
+  color: rgba(0, 0, 0, .65);
+  background: #fff;
+  transition: width .3s;
+  line-height: 42px;
+  li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  i[class^='w-icon'] {
+    margin-right: 5px;
+    vertical-align: middle;
+    position: relative;
+    top: -1px;
+    &:before {
+      vertical-align: top;
+    }
+  }
+  &-item {
+    line-height: 43px;
+    margin: 0;
+    padding: 0 10px 0 20px !important;
+    font-size: 14px;
+    position: relative;
+    display: block;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: color @transition-time;
+    > a {
+      display: block;
+      color: rgba(0, 0, 0, .65);
+    }
+    &.active {
+      color: #0fa120;
+    }
+    &.disabled {
+      color: rgba(0, 0, 0, .25) !important;
+      cursor: not-allowed;
+      background: none;
+      border-color: transparent !important;
+    }
+    &:hover {
+      color: #0fa120;
+    }
+  }
+  &-vertical {
+    border-right: 1px solid #e8e8e8;
+  }
+  &-vertical &-item:after {
+    content: "";
+    position: absolute;
+    right: -1px;
+    top: 0;
+    bottom: 0;
+    opacity: 0;
+    transform: scaleY(0.0001);
+    border-right: 3px solid #0ea042;
+    transition: transform 0.15s cubic-bezier(0.215, 0.61, 0.355, 1), opacity 0.15s cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  &-vertical &-item.active:after {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+  &-horizontal {
+    border: 0;
+    border-bottom: 1px solid #e9e9e9;
+    box-shadow: none;
+    z-index: 0;
+    &:after {
+      content: " ";
+      display: block;
+      height: 0;
+      clear: both;
+    }
+    .w-menu-item {
+      position: relative;
+      top: 1px;
+      float: left;
+      padding: 0 20px !important;
+      transition: color 0.3s cubic-bezier(0.645, 0.045, 0.355, 1), border-color 0.3s cubic-bezier(0.645, 0.045, 0.355, 1), background-color 0.3s cubic-bezier(0.645, 0.045, 0.355, 1), padding 0.15s cubic-bezier(0.645, 0.045, 0.355, 1);
+      &.active {
+        border-bottom: 1px solid #0fa120;
+      }
+      &.disabled {
+        color: rgba(0, 0, 0, .25) !important;
+        border-bottom: 1px solid transparent;
+      }
+      &:hover:not(.disabled) {
+        border-bottom: 1px solid #0fa120;
+      }
+    }
+    .w-sub-menu-selected .w-sub-menu-title,
+    .w-sub-menu:hover .w-sub-menu-title {
+      border-bottom: 1px solid #0fa120;
+      color: #0fa120;
+    }
+    .w-sub-menu-arrow {
+      line-height: 0;
+    }
+    .w-sub-menu {
+      float: left;
+      position: relative;
+      top: 1px;
+      .w-menu-item.active {
+        border-bottom: 0;
+      }
+      .w-sub-menu-arrow {
+        position: static !important;
+        &::before {
+          position: absolute;
+          transform: rotate(0deg);
+          transition: transform .3s;
+        }
+      }
+      &:hover .w-sub-menu-arrow::before {
+        position: absolute;
+        transform: rotate(180deg);
+      }
+      &:hover .w-sub-menu-con {
+        display: block;
+        position: absolute;
+        left: 0;
+        border: 1px solid #dadada;
+        padding: 5px 0;
+        line-height: 38px;
+        background-color: #fff;
+        z-index: 100;
+        border-radius: 4px;
+        min-width: 100%;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 0 6px rgba(0, 0, 0, 0.04);
+        .w-menu-item-group-title {
+          padding-left: 10px;
+          font-size: 12px;
+        }
+        .w-menu-item {
+          padding: 0 0 0 15px !important;
+          float: none;
+          &:hover:not(.disabled) {
+            border-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+.@{w-sub-menu} {
+  &-title {
+    padding: 0 20px;
+    font-size: 14px;
+    line-height: 42px;
+    position: relative;
+    white-space: nowrap;
+    & > * {
+      line-height: 42px;
+    }
+    cursor: pointer;
+      transition: color @transition-time;
+    &:hover {
+      color: #0fa120;
+    }
+  }
+  &-arrow {
+    transition: transform @transition-time;
+    position: absolute !important;
+    vertical-align: middle;
+    margin-left: 5px;
+    transform: rotate(0deg) scale(0.9);
+    right: 16px;
+    top: 0;
+  }
+  &-con &-title {
+    padding-left: 20px;
+  }
+  & & {
+    padding-left: 20px;
+  }
+  &-arrow.opened {
+    transform: rotate(180deg);
+  }
+  &-con {
+    display: none;
+    &.opened {
+      display: block;
+    }
+    .w-menu-item {
+      padding-left: 40px !important;
+    }
+  }
+}
+
+.@{w-menu-item-group} {
+  &-title {
+    white-space: nowrap;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.45);
+    line-height: 1.5;
+    padding: 8px 16px 8px 30px;
+    transition: color .3s;
+  }
+}
+
+.w-menu-item-divider {
+  height: 1px;
+  overflow: hidden;
+  background-color: #e8e8e8;
+  line-height: 0;
+}
+
+// 横向菜单暗主题样式
+.@{w-menu}-horizontal.w-menu-dark {
+  .w-menu-item {
+    top: 0;
+    &.disabled {
+      color: rgba(255, 255, 255, 0.42) !important;
+    }
+  }
+  .w-sub-menu {
+    top: 0;
+  }
+  .w-menu-item:hover:not(.disabled) {
+    border-bottom: 1px solid #0fa120;
+  }
+  .w-sub-menu-selected .w-sub-menu-title,
+  .w-sub-menu:hover .w-sub-menu-title {
+    background-color: #0ea042;
+    color: #fff;
+  }
+  .w-sub-menu-con, .w-sub-menu-con a {
+    color: rgba(0, 0, 0, 0.65);
+  }
+  .w-sub-menu-selected .w-sub-menu-con a {
+    color: rgba(0, 0, 0, 0.65);
+  }
+}
+
+// 竖排索契内主题样式
+// 需要设置 `mode=inline` 并且 `inlineCollapsed=true`
+.@{w-menu}-inline-collapsed {
+  width: 80px;
+  .w-menu-item i[class^='w-icon'] + span,
+  .w-sub-menu i[class^='w-icon'] + span {
+    max-width: 0;
+    display: inline-block;
+    opacity: 0;
+  }
+  .w-sub-menu-title span + i[class^='w-icon'] {
+    display: none;
+  }
+  .w-menu-item, .w-sub-menu {
+    text-align: center;
+    i[class^='w-icon'] {
+      font-size: 18px;
+      margin-right: 0;
+    }
+  }
+  .w-menu-item {
+    padding: 0 10px !important;
+    .w-tooltip-popup {
+      margin-left: 33px;
+      line-height: 16px;
+      white-space: nowrap;
+      i[class^='w-icon'] {
+        display: none;
+      }
+      i[class^='w-icon'] + span {
+        opacity: 1;
+        display: block;
+        max-width: 100%;
+      }
+      a {
+        color: #fff;
+      }
+    }
+  }
+}
+
+// 缩起内嵌菜单
+.@{w-menu}-inline {
+  &.w-menu-dark {
+    .w-sub-menu, .w-menu-item, .w-menu-item-group {
+      background-color: #343a40;
+    }
+  }
+  &.w-menu-light {
+    .w-sub-menu-con {
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 0 6px rgba(0, 0, 0, 0.04);
+      border-radius: 5px;
+      padding: 6px 0 !important;
+    }
+  }
+  .w-sub-menu {
+    position: relative;
+    padding-left: 0;
+    .w-menu-item-group:first-child,
+    .w-sub-menu:first-child,
+    .w-menu-item:first-child {
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+    }
+    .w-menu-item-group:last-child,
+    .w-sub-menu:last-child,
+    .w-menu-item:last-child {
+      border-bottom-right-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
+    .w-menu-item {
+      text-align: left;
+    }
+  }
+  .w-menu-item-group .w-menu-item {
+    background-color: transparent;
+    border-radius: 0 !important;
+  }
+  .w-sub-menu .w-sub-menu-con {
+    position: absolute;
+    z-index: 1988;
+    padding: 6px 5px;
+    text-align: left;
+  }
+  .w-menu-item, .w-sub-menu-title {
+    padding: 0 16px !important;
+  }
+  .w-menu-item-group-title {
+    padding-left: 16px;
+    font-size: 12px;
+  }
+  .w-sub-menu-arrow {
+    transform: rotate(-90deg) scale(0.8);
+    right: 6px;
+  }
+  .w-sub-menu-con {
+    .w-sub-menu-title {
+      padding-right: 26px !important;
+      text-align: left;
+    }
+    .w-sub-menu-arrow {
+      display: inherit !important;
+    }
+    i[class^='w-icon'] {
+      display: none;
+    }
+    i[class^='w-icon'] + span {
+      display: initial;
+      text-align: left;
+      opacity: 1;
+    }
+  }
+}
+
+// 暗主题样式
+.@{w-menu}-dark {
+  background: #343a40;
+  color: #fff;
+  .disabled {
+    color: rgba(255, 255, 255, 0.36) !important;
+  }
+  .@{w-menu}-vertical {
+    border-right-color: transparent;
+  }
+  .@{w-menu}-item {
+    &-group-title {
+      color: #afafaf;
+    }
+    a {
+      color: #fff;
+    }
+    &.active {
+      background-color: #0ea042;
+      color: #fff;
+      &::after {
+        display: none;
+      }
+    }
+  }
+}

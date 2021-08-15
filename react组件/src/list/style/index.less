@@ -1,0 +1,55 @@
+@List:~"w-list";
+
+.@{List} {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #52575c;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: relative;
+  &-bordered {
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+  }
+  &-bordered &-item {
+    &:last-child {
+      border-bottom: 0;
+      border-radius: 0 0 4px 4px;
+    }
+    &.w-disabled {
+      cursor: not-allowed;
+      color: #a3a6a9;
+    }
+    &.w-active {
+      background: #f8f8f9;
+      color: #007bff;
+    }
+  }
+  &-bordered a&-item {
+    display: block;
+    color: #52575c;
+    &:hover {
+      background: #f8f8f9;
+    }
+  }
+  &-striped &-item:nth-of-type(2n) {
+    background: #f8f8f9;
+  }
+  &-bordered &-item,
+  &-bordered &-header {
+    border-bottom: 1px solid #e8e8e8;
+  }
+  &-item, &-footer, &-header {
+    padding: 12px 18px;
+  }
+  &-size-small &-item, &-size-small &-footer, &-size-small &-header {
+    padding: 8px 16px;
+  }
+  &-size-large &-item,
+  &-size-large &-footer,
+  &-size-large &-header {
+    padding: 16px 24px;
+  }
+}

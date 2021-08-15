@@ -1,0 +1,75 @@
+@import "../../style/variables.less";
+@import "../../style/mixins/index.less";
+
+@tag-cls: ~"w-tag";
+
+.@{tag-cls} {
+  display: inline-block;
+  padding: @tag-padding-top @tag-padding-right @tag-padding-bottom @tag-padding-right;
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 13px;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: .25em;
+  [class^="w-icon-"], [class*=" w-icon-"] {
+    vertical-align: middle;
+  }
+  & + .@{tag-cls} {
+    margin-left: @tag-padding-horizontal;
+  }
+  svg {
+    cursor: pointer;
+    position: relative;
+    top: -1px;
+    margin-left: 2px;
+  }
+  &-icon-close {
+    margin: -2px 0 0 0;
+    transform: scale(.83333333) rotate(0deg);
+    cursor: pointer;
+  }
+  &-white {
+    color: @tag-white-color;
+    border: 1px solid @tag-white-border-color;
+    padding: @tag-padding-top-white @tag-padding-right;
+    background-color: @tag-white-bg;
+    svg g {
+      stroke: @tag-white-color;
+    }
+  }
+  &-pink {
+    background-color: @tag-pink-bg;
+  }
+  &-red {
+    background-color: @tag-red-bg;
+  }
+  &-yellow {
+    background-color: @tag-yellow-bg;
+  }
+  &-orange {
+    background-color: @tag-orange-bg;
+  }
+  &-green {
+    background-color: @tag-green-bg;
+  }
+  &-cyan {
+    background-color: @tag-cyan-bg;
+  }
+  &-blue {
+    background-color: @tag-blue-bg;
+  }
+  &-purple {
+    background-color: @tag-purple-bg;
+  }
+  &.checkable,&.checked {
+    cursor: pointer;
+  }
+  &.checkable {
+    background-color: transparent;
+    color: initial;
+    border-color: transparent;
+  }
+}

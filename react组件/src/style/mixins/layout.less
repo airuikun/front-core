@@ -1,0 +1,32 @@
+// 原来less这么难用，下次重构用回 stylus 算求了
+.generate-columns(@n, @i: 1,@name:".w-col-1") when (@i =< @n) {
+  .mixin-columns-name(@i) when(@i > 1) {
+    @namey: ~"@{name},.w-col-@{i}";
+  }
+  .mixin-columns-name(@i);
+  .mixin-columns-name2(@i) when (@i = 1) {
+    @namey: ~".w-col-@{i}";
+  }
+  .mixin-columns-name2(@i);
+  .mixin-columns (@i) when (@i = @n) {
+    @{namey} {
+      float: left;
+      box-sizing: border-box;
+    }
+  }
+  .mixin-columns(@i);
+
+  .w-col-@{i} {
+    width: (@i * 100% / @n);
+  }
+  .w-col-offset-@{i} {
+    margin-left: (@i * 100% / @n);
+  }
+  .w-col-pull-@{i} {
+    right: (@i * 100% / @n);
+  }
+  .w-col-push-@{i} {
+    left: (@i * 100% / @n);
+  }
+  .generate-columns(@n, (@i + 1),@namey);
+}

@@ -1,0 +1,47 @@
+@import "../../style/variables.less";
+@import "../../style/mixins/index.less";
+.w-message {
+  pointer-events: none;
+  text-align: center;
+  position: fixed;
+  font-size: @font-size-small;
+  z-index: @zindex-message;
+  width: 100%;
+  top: @line-height-computed;
+  > span {
+    display: block;
+  }
+  .w-alert {
+    display: inline-block;
+    padding: @padding-small-vertical @padding-small-horizontal;
+    border-width: 0;
+    box-shadow: @box-shadow-x @box-shadow-y @box-shadow-blur @box-shadow-spread @box-shadow-bg;
+    i[class^="w-icon-"] + span {
+      margin-left: 3px;
+    }
+  }
+}
+.w-message-bottom {
+  top: inherit;
+  bottom: @line-height-computed;
+}
+.w-message-top-left {
+  text-align: left;
+  left: @line-height-computed;
+}
+.w-message-top-right {
+  text-align: right;
+  right: @line-height-computed;
+}
+.w-message-bottom-left {
+  top: inherit;
+  text-align: left;
+  bottom: @line-height-computed;
+  left: @line-height-computed;
+}
+.w-message-bottom-right {
+  top: inherit;
+  text-align: right;
+  bottom: @line-height-computed;
+  right: @line-height-computed;
+}

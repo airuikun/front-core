@@ -1,0 +1,93 @@
+.w-timeselect,.w-timepicker {
+  .w-popper-warpper {
+    position: absolute;
+    width: 100%;
+    text-align: left;
+  }
+}
+.w-timepicker-panel-popper, .w-timeselect-panel-popper {
+  position: absolute;
+  top: 5px;
+  z-index: 1001;
+  border: 1px solid #e8e8e8;
+  border-radius: 4px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);
+  box-sizing: border-box;
+}
+
+.w-timeselect-panel {
+  overflow: auto;
+  max-height: 200px;
+}
+.w-timeselect-panel div {
+  padding: 5px 10px;
+  font-size: 14px;
+  background-color: #fff;
+  transition: background-color .3s;
+  &:hover,&.w-selected {
+    background-color: #ececec;
+    cursor: pointer;
+  }
+  &.w-disabled {
+    color: #ececec;
+    cursor: not-allowed;
+    &:hover {
+      background-color: transparent;
+    }
+  }
+}
+
+.w-timepicker-panel {
+  overflow: auto;
+  max-height: 200px;
+}
+
+.w-time-spinner {
+  height: 150px;
+}
+.w-time-spinner-select:first-child {
+  border-left: 1px solid transparent;
+}
+.w-time-spinner-select {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  width: 33.33%;
+  border-left: 1px solid #e9e9e9;
+  float: left;
+  &:hover {
+    overflow-y: auto;
+  }
+  ul {
+    width: 100%;
+    padding: 0 0 160px;
+  }
+  li {
+    display: block;
+    user-select: none;
+    list-style: none;
+    box-sizing: content-box;
+    margin: 0;
+    padding: 0 0 0 8px;
+    width: 100%;
+    height: 24px;
+    line-height: 24px;
+    text-align: left;
+    cursor: pointer;
+    &:hover {
+      background: #f7f7f7;
+    }
+    &.w-disabled:hover {
+      background: transparent;
+    }
+    &.w-disabled {
+      color: rgba(0, 0, 0, .25);
+      cursor: not-allowed;
+    }
+    &.w-checked {
+      background: #f7f7f7;
+      font-weight: 700;
+    }
+  }
+}

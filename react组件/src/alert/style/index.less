@@ -1,0 +1,106 @@
+@import "../../style/variables.less";
+@import "../../style/mixins/index.less";
+
+.w-alert {
+  position: relative;
+  margin-bottom: @line-height-computed;
+  border: 1px solid transparent;
+  border-radius: @alert-border-raduis;
+  padding: @alert-padding @alert-padding + 5;
+  font-size: 12px;
+  .w-alert-message + .w-alert-close-icon {
+    font-size: 12px;
+  }
+  .w-alert-message:first-child:not(:last-child) {
+    font-size: 14px;
+    display: block;
+    padding-bottom: 5px;
+  }
+  > .w-alert-close-icon {
+    width: @close-icon-size;
+    height: @close-icon-size;
+    top: @close-icon-top;
+    right: @close-icon-right;
+    .w-close-icon(@close-icon-color);
+  }
+  &.w-alert-icon {
+    &.w-alert-icon-description {
+      padding: 15px 16px;
+      padding-left: 56px;
+    }
+    svg,[class^="w-icon-"] {
+      vertical-align: middle;
+      position: absolute;
+    }
+    .w-alert-message {
+      svg,[class^="w-icon-"] {
+        font-size: 24px;
+        height: inherit;
+        left: 16px;
+      }
+    }
+    .w-alert-description:first-child {
+      padding-left: 15px;
+      svg,[class^="w-icon-"] {
+        height: 12px;
+        width: 12px;
+        margin-right: 5px;
+        margin-top: 2px;
+        left: 9px;
+      }
+    }
+    .w-alert-description {
+      font-size: 12px;
+      word-break: break-all;
+    }
+  }
+}
+
+.w-alert-default {
+  .alert-variant(@alert-default-bg, @alert-default-border, @alert-default-text);
+}
+
+.w-alert-primary {
+  .alert-variant(@alert-primary-bg, @alert-primary-border, @alert-primary-text);
+  .w-alert-description, .w-alert-message {
+    i[class^="w-icon-"] {
+      color: @alert-primary-text;
+    }
+  }
+}
+
+.w-alert-success {
+  .alert-variant(@alert-success-bg, @alert-success-border, @alert-success-text);
+  .w-alert-description, .w-alert-message {
+    i[class^="w-icon-"] {
+      color: @alert-success-text;
+    }
+  }
+}
+
+.w-alert-warning {
+  .alert-variant(@alert-warning-bg, @alert-warning-border, @alert-warning-text);
+  .w-alert-description, .w-alert-message {
+    i[class^="w-icon-"] {
+      color: @alert-warning-text;
+    }
+  }
+}
+
+.w-alert-info {
+  .alert-variant(@alert-info-bg, @alert-info-border, @alert-info-text);
+  .w-alert-description, .w-alert-message {
+    i[class^="w-icon-"] {
+      color: @alert-info-text;
+    }
+  }
+}
+
+.w-alert-error {
+  .alert-variant(@alert-error-bg, @alert-error-border, @alert-error-text);
+  .w-alert-description, .w-alert-message {
+    i[class^="w-icon-"] {
+      color: @alert-error-text;
+    }
+  }
+}

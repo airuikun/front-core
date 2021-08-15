@@ -1,0 +1,46 @@
+
+.dome_key {
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  .text {
+    position: absolute;
+    right: 0;
+    bottom: 5px;
+    left: 0;
+    text-align: center;
+  }
+}
+
+.dome_key_bg {
+  margin-right: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  background-color: #fff;
+  width: 80px;
+  height: 240px;
+  color: #10161a;
+  box-shadow: 0 0 0 1px rgba(16, 22, 26, .1), 0 1px 1px rgba(16, 22, 26, .2), 0 2px 6px rgba(16, 22, 26, .2);
+  &.press {
+    background-color: #137cbd;
+    color: #fff;
+  }
+}
+
+.dome_key.black {
+  z-index: 2;
+  width: 0;
+  vertical-align: top;
+  .dome_key_bg {
+    position: absolute;
+    top: 0;
+    left: -40px;
+    background-color: #10161a;
+    height: 160px;
+    color: #fff;
+    &.press {
+      background-color: #137cbd;
+      color: #fff;
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "koaKm",
+  "version": "1.0.0",
+  "description": "Implement a simple version of koa",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "koa"
+  ],
+  "author": "ruikunai",
+  "license": "MIT"
+}

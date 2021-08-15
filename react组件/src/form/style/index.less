@@ -1,0 +1,124 @@
+@import "../../style/variables.less";
+
+@form-cls: ~"w-form";
+@form-item-cls: ~"@{form-cls}-item";
+
+.@{form-item-cls} {
+  font-size: 12px;
+  margin-bottom: 16px;
+  color: rgba(0, 0, 0, .65);
+  vertical-align: top;
+  .w-switch {
+    margin: 6px 0;
+  }
+  .w-tag-group {
+    margin: 5px 0;
+  }
+  .w-checkbox-group {
+    margin: 6px 0;
+  }
+}
+.@{form-item-cls}-control {
+  position: relative;
+  vertical-align: middle;
+}
+.@{form-item-cls}-label {
+  text-align: right;
+  vertical-align: middle;
+  line-height: 31px;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.@{form-item-cls}-label label:after {
+  content: ":";
+  margin: 0 8px 0 2px;
+  position: relative;
+}
+.@{form-item-cls}.required {
+  .@{form-item-cls}-label label:before {
+    display: inline-block;
+    margin-right: 4px;
+    content: "*";
+    font-family: SimSun;
+    line-height: 1;
+    font-size: 12px;
+    color: #f04134;
+  }
+}
+.@{form-item-cls}-explain {
+  color: rgba(0, 0, 0, .43);
+  line-height: 1.5;
+}
+
+.@{form-item-cls}.error {
+  .@{form-item-cls}-explain {
+    color: red;
+  }
+  .w-input-inner {
+    box-shadow: 0 0 0 0 #fff, 0 0 0 0 rgba(0, 0, 0, 0), inset 0 0 0 1px #f04134, inset 0 1px 1px rgba(25, 25, 25, 0.2);
+  }
+}
+.@{form-item-cls}.help, .@{form-item-cls}.error {
+  margin-bottom: 6px;
+}
+.@{form-cls}-inline {
+  & .@{form-cls}-item {
+    vertical-align: middle;
+  }
+  & .@{form-cls}-item + .@{form-cls}-item {
+    margin: 0 0 16px 10px;
+  }
+  .@{form-item-cls}-control, .@{form-item-cls}-label, .@{form-item-cls} {
+    display: inline-block;
+  }
+  .w-form-item-explain {
+    position: absolute;
+  }
+}
+
+// Form layout
+//== Vertical Form
+.make-vertical-layout-label() {
+  padding: 0 0 8px;
+  margin: 0;
+  display: block;
+  text-align: left;
+  line-height: 1.5;
+
+  label:after {
+    display: none;
+  }
+}
+
+.make-vertical-layout() {
+  .@{form-item-cls}-label,
+  .@{form-item-cls}-control {
+    display: block;
+    width: 100%;
+  }
+  .@{form-item-cls}-label {
+    .make-vertical-layout-label();
+  }
+}
+
+@media screen and (max-width: @screen-xs-max) {
+  .make-vertical-layout();
+  .w-col-xs-24.@{form-item-cls}-label {
+    .make-vertical-layout-label();
+  }
+}
+
+@media (max-width: @screen-sm-max) {
+  .w-col-sm-24.@{form-item-cls}-label {
+    .make-vertical-layout-label();
+  }
+}
+
+@media (max-width: @screen-md-max) {
+  .w-col-md-24.@{form-item-cls}-label {
+    .make-vertical-layout-label();
+  }
+}

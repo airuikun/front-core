@@ -1,0 +1,237 @@
+@import "../../style/variables.less";
+@import "../../style/mixins/index.less";
+
+.w-table {
+  font-size: 12px;
+  table {
+    border-collapse: separate;
+    border-spacing: 0;
+    border-bottom: 0;
+    border-right: 0;
+    min-width: 100%;
+    border-radius: @border-radius-base;
+    th,td {
+      border-bottom: 1px solid @table-border-color;
+      border-right: 1px solid @table-border-color;
+    }
+    th {
+      height: @table-tr-height;
+      color: @table-th-color;
+      font-weight: @table-font-weight;
+      background-color: @table-th-bg-color;
+    }
+    td {
+      height: @table-tr-height;
+      padding: @padding-small-vertical @padding-small-horizontal;
+    }
+    td._select, th._select {
+      text-align: center;
+      width: 42px;
+    }
+    tr {
+      transition: background @transition-time @transition-timing-functio;
+      min-height: @table-tr-height;
+      &:hover,&.w-table-tr-hover {
+        background-color: @table-tr-bg-active-color;
+      }
+    }
+  }
+  .w-loading {
+    display: block;
+    overflow: initial;
+    width: 100%;
+  }
+  .w-table-footer,.w-table-caption {
+    padding: @table-caption-padding;
+  }
+  .w-table-footer {
+    background-color: @table-th-bg-color;
+  }
+  table + .w-table-footer {
+    border: 1px solid @table-border-color;
+    border-width: 0 1px 1px;
+  }
+  .w-table-caption {
+    text-align: left;
+    border-radius: @border-radius-base @border-radius-base 0 0;
+  }
+}
+.w-table-paging {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.w-table {
+  &.w-table-scroll {
+    .w-table-head {
+      overflow-x: hidden;
+    }
+    .w-table-body {
+      overflow: auto;
+    }
+  }
+  .placeholder {
+    border-width: 0 1px 1px;
+    border-color: @table-border-color;
+    border-style: solid;
+    text-align: center;
+    padding: 10px 0;
+  }
+  &.is-empty {
+    .w-table-fixed-body-left, .w-table-fixed-body-right {
+      display: none;
+    }
+  }
+}
+
+// 至于一个表格的样式
+.w-table-default {
+  table {
+    border-width: 1px 0 0 1px;
+    border-color: @table-border-color;
+    border-style: solid;
+    overflow: hidden;
+    tbody tr:last-child td:last-child {
+      border-bottom-right-radius: 4px;
+    }
+  }
+  &.is-empty {
+    tbody td {
+      text-align: center;
+    }
+  }
+  &.is-footer {
+    table {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      tbody tr:last-child td:last-child {
+        border-bottom-right-radius: 0;
+      }
+    }
+  }
+  .w-table-caption + table {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+}
+.w-table-footer {
+  border-radius: 0 0 5px 5px;
+}
+.w-table-head,.w-table-footer,.w-table-body,.w-table-caption,
+.w-table-fixed-head-left,.w-table-fixed-body-left,
+.w-table-fixed-head-right,.w-table-fixed-body-right {
+  border: solid @table-border-color;
+}
+.w-table-caption {
+  border-width: 1px 1px 0;
+}
+.w-table-footer {
+  border-width: 0 1px 1px;
+}
+.w-table-head,.w-table-body {
+  td:last-child,tr:first-child th:last-child {
+    border-right: 0;
+  }
+}
+.w-table-head {
+  border-width: 1px 1px 0;
+}
+.w-table-body {
+  border-width: 0 1px;
+}
+.w-table-scroll .w-table-body {
+  border-bottom: 1px solid @table-border-color;
+  tr:last-child td {
+    border-bottom: 0;
+  }
+}
+.w-table-fixed-head-right, .w-table-fixed-body-right {
+  border-width: 0 1px 1px 0;
+  th,td {
+    border-bottom: 1px solid @table-border-color;
+    border-right: 1px solid @table-border-color;
+  }
+  td:last-child,tr:first-child th:last-child {
+    border-right: 0;
+  }
+}
+.w-table-fixed-head-right {
+  border-bottom: 0;
+}
+.w-table-fixed-head-left,.w-table-fixed-body-left {
+  border-width: 0 1px 1px;
+  th,td {
+    border-bottom: 1px solid @table-border-color;
+    border-right: 1px solid @table-border-color;
+  }
+  td:last-child,tr:first-child th:last-child {
+    border-right: 0;
+  }
+  tbody tr:last-child td {
+    border-bottom: 0;
+  }
+}
+.w-table-fixed-head-left {
+  border-bottom: 0;
+  border-right: 0;
+}
+.w-table-scroll-position-right {
+  table thead tr th:first-child,table tbody tr td:first-child {
+    border-left: 0;
+  }
+}
+.w-table-scroll-position-right,&.w-table-scroll-position-middle {
+  .w-table-fixed-left {
+    box-shadow: @table-shadow-x @table-shadow-y @table-shadow-blur @table-shadow-spread @table-shadow-bg;
+  }
+}
+.w-table-scroll-position-left,&.w-table-scroll-position-middle {
+  .w-table-fixed-right {
+    box-shadow: -@table-shadow-x @table-shadow-y @table-shadow-blur @table-shadow-spread @table-shadow-bg;
+  }
+}
+// 悬浮table样式
+.w-table-fixed {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.w-table-fixed-right,.w-table-fixed-left {
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  transition: box-shadow @transition-time @transition-timing-functio;
+  .w-table-fixed-body-left {
+    margin-right: -20px;
+    padding-right: 20px;
+  }
+  .w-table-fixed-body-left,.w-table-fixed-body-right {
+    overflow-y: scroll;
+    overflow-x: auto;
+    position: relative;
+  }
+  table tbody {
+    background-color: #fff;
+  }
+}
+.w-table-fixed-right {
+  float: right;
+  right: 0;
+}
+.w-table-fixed-left {
+  border-radius: 0 0 0 @border-radius-base;
+}
+// 头部选择
+.w-table {
+  thead .w-table-selection {
+    display: inline-block;
+    position: relative;
+    &:before {
+      content: " ";
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      z-index: 2;
+    }
+  }
+}

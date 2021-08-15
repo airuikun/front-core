@@ -1,0 +1,133 @@
+@import "../../style/variables.less";
+@import "../../style/mixins/index.less";
+
+.w-switch {
+  appearance: none;
+  position: relative;
+  border: 1px solid #dfdfdf;
+  vertical-align: middle;
+  line-height: 17px;
+  min-width: @switch-width - 10;
+  height: @switch-height - 4;
+
+  font-size: 12px;
+  // padding: 0 4px;
+  padding-left: 18px;
+  padding-right: 4px;
+  outline: 0;
+  border-radius: 16px;
+  box-sizing: border-box;
+  background: #dfdfdf;
+  display: inline-block;
+  transition: background @transition-time @transition-timing-functio, min-width @transition-time;
+  user-select: none;
+  overflow: hidden;
+  &:before,&:after {
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 1px;
+    border-radius: 50%;
+    transition: all @transition-time;
+  }
+  &:before {
+    width: @switch-width - 29;
+    height: @switch-height - 8;
+  }
+  &:after {
+    width: @switch-height - 8;
+    height: @switch-height - 8;
+    background-color: #fff;
+    top: 1px;
+  }
+  span {
+    color: #646464;
+    display: block;
+    text-align: right;
+    font-weight: 300;
+    transition: text-align @transition-time @transition-timing-functio;
+  }
+  &.w-switch-checked {
+    border-color: #04be02;
+    background-color: #04be02;
+    padding-left: 4px;
+    padding-right: 18px;
+    &:before {
+      transform: scale(0);
+    }
+    &:after {
+      left: 100%;
+      margin-left: -17px;
+    }
+    span {
+      text-align: left;
+      color: #fff;
+    }
+  }
+  input {
+    position: relative;
+    z-index: -1;
+    left: -99999px;
+    display: none;
+  }
+  &.w-switch-disabled {
+    opacity: 0.7;
+    cursor: @cursor-disabled;
+    &:after {
+      opacity: 0.7;
+    }
+  }
+  &.w-switch-color {
+    border-color: transparent;
+    &:before {
+      background-color: transparent;
+    }
+    span {
+      color: #fff;
+    }
+  }
+
+  &.w-switch-large {
+    height: @switch-height;
+    padding-right: 3px;
+    padding-left: 20px;
+    &:after {
+      width: @switch-height - 4;
+      height: @switch-height - 4;
+    }
+    &.w-switch-checked {
+      padding-right: 20px;
+      padding-left: 3px;
+      &:after {
+        left: 100%;
+        margin-left: -21px;
+      }
+    }
+    span {
+      line-height: 22px;
+      padding: 0 3px;
+      height: 22px;
+      font-size: 14px;
+    }
+  }
+  &.w-switch-small {
+    line-height: 12px;
+    min-width: @switch-width - 40;
+    height: @switch-height - 10;
+    padding-left: 15px;
+    &.w-switch-checked {
+      padding-right: 15px;
+      padding-left: 4px;
+      &:after {
+        left: 100%;
+        margin-left: -12px;
+      }
+    }
+    &:after {
+      top: 0;
+      left: 0;
+      width: @switch-width - 33;
+      height: @switch-height - 12;
+    }
+  }
+}

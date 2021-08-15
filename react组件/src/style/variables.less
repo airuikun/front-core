@@ -1,0 +1,391 @@
+//== 颜色 Colors
+//-----------------------
+//## 对于颜色的全局使用
+@gray-base :          #000;
+
+@gray-darker :         lighten(@gray-base, 13.5%); // #222 增加一定数值的颜色亮度。
+
+@gray-dark :           lighten(@gray-base, 20%); // #333
+
+@gray :                lighten(@gray-base, 33.5%); // #555
+
+@gray-light :          lighten(@gray-base, 46.7%); // #777
+
+@gray-lighter :        lighten(@gray-base, 93.5%); // #eee
+
+@brand-primary :       darken(#5CA2F4, 6.5%); // #337ab7  默认首选
+
+@brand-success :       #45BC01;     //成功
+
+@brand-info :          #00b0ff;     //一般信息
+
+@brand-warning :       #FFB12E;     //警告
+
+@brand-danger :        #FF4A60;     //危险
+
+@body-background :     #fff;
+
+@gray-light :          lighten(@gray-base, 46.7%); // #777
+
+@gray-lighter :        lighten(@gray-base, 93.5%); // #eee
+
+
+//== 组件 Components
+//-----------------------
+//## 定义普通填充和边框半径大小。基于部分文本 14px 和1.428 line-height（~ 20px开始）。
+
+@padding-base-vertical :    6px;
+
+@padding-base-horizontal :  12px;
+
+@padding-large-vertical :   10px;
+
+@padding-large-horizontal : 16px;
+
+@padding-small-vertical :   5px;
+
+@padding-small-horizontal : 10px;
+
+@padding-mini-vertical :      3px;
+@padding-mini-horizontal :    5px;
+
+@line-height-large :        1.3333333; // extra decimals for Win 8.1 Chrome
+@line-height-small :        1.5;
+@line-height-mini :         12px;
+
+@border-radius-base :       4px;
+
+@border-radius-large :      6px;
+
+@border-radius-small :      4px;
+
+//== 版式 Typography
+//-----------------------
+//## Font, line-height, headings
+@font-family-sans-serif : "Helvetica Neue For Number", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+@font-family-serif :      Georgia, "Times New Roman", Times, serif;
+
+@code-family :            Consolas, Menlo, Courier, monospace;
+//** 默认字体 for `<code>`, `<kbd>`, and `<pre>`.
+@font-family-monospace :  Menlo, Monaco, Consolas, "Courier New", monospace;
+
+@font-family-base :       @font-family-sans-serif;
+
+@font-size-base :         14px;
+@font-size-large :        ceil(@font-size-base * 1.25); // ~18px
+@font-size-small :        ceil(@font-size-base * 0.85); // ~12px
+
+//**  `line-height` 在组件 buttons 中使用。
+
+@line-height-base :       1.428571429; // 20/14
+
+@line-height-computed :   10px; // ~20px
+// @line-height-computed :   floor(@font-size-base * @line-height-base); // ~20px
+
+// z-index 层级
+@zindex-message :         1051;
+@zindex-modal :            1050;
+@zindex-modal-mask :       -1;
+
+// 弹出层阴影样式
+@box-shadow-bg :            fade(@gray-base, 20%);
+
+@box-shadow-x :             0;
+
+@box-shadow-y :             1px;
+
+@box-shadow-blur :          1px;
+
+@box-shadow-spread :        1px;
+
+//== 按钮 Button
+//-----------------------
+//## 对于每个RUI的按钮，定义文本、 背景和边框的颜色。
+
+@btn-font-weight :              300;
+
+@btn-default-color :            #333;
+
+@btn-default-bg :               #fff;
+
+@btn-default-border :           #ccc;
+
+@btn-default-color :            #333;
+
+@btn-default-bg :               #fff;
+
+@btn-default-border :           #ccc;
+
+@btn-primary-color :            #fff;
+@btn-primary-bg :               @brand-primary;
+
+@btn-primary-border :           darken( @btn-primary-bg, 5% ); // 降低一定数值的颜色亮度。
+@btn-success-color :            #fff;
+@btn-success-bg :               @brand-success;
+@btn-success-border :           darken(@btn-success-bg, 5%);
+
+@btn-info-color :               #fff;
+@btn-info-bg :                  @brand-info;
+@btn-info-border :              darken(@btn-info-bg, 5%);
+
+@btn-warning-color :            #fff;
+@btn-warning-bg :               @brand-warning;
+@btn-warning-border :           darken(@btn-warning-bg, 5%);
+
+@btn-danger-color :             #fff;
+@btn-danger-bg :                @brand-danger;
+@btn-danger-border :            darken(@btn-danger-bg, 5%);
+
+@btn-link-disabled-color :      @gray-light;
+@btn-link-color :               @brand-primary;
+
+@btn-loading-small :            @font-size-small; //12px
+@btn-extra-small-top:           2px;
+
+// 定义按钮的圆角大小
+@btn-border-radius-base :       @border-radius-base;
+
+@btn-border-radius-large :      @border-radius-large;
+
+@btn-border-radius-small :      @border-radius-small;
+
+// 鼠标禁止样式
+@cursor-disabled :               not-allowed;
+
+// 动画属性
+@transition-time :               .2s;
+
+@transition-timing-functio :     ease-in;
+
+//== Alerts 状态 states  定义颜色
+
+// **危险状态颜色
+@state-error-text :             #a94442;
+
+@state-error-bg :               #f2dede;
+
+@state-error-border :           darken(spin(@state-error-bg, 0), 0%);
+
+// === Alert 警告框 =======
+@alert-padding :             10px;
+@alert-border-raduis: @border-radius-base;
+
+// **默认状态颜色
+@alert-default-bg :          #fff;
+
+@alert-default-text :        rgba(0,0,0,.85);
+
+@alert-default-border :      darken(spin(@alert-default-bg, 0), 15%);
+
+@alert-primary-text :        #007bff;
+
+@alert-primary-bg :          lighten(@alert-primary-text, 45%);
+
+@alert-primary-border :      darken(spin(@alert-primary-bg, 0), 0%);
+
+@alert-success-text :        #28a745;
+
+@alert-success-bg :          lighten(@alert-success-text, 51%);
+
+@alert-success-border :      darken(spin(@alert-success-bg, 0), 0%);
+
+@alert-info-text :           #007bff;
+
+@alert-info-bg :             lighten(@alert-info-text, 45%);
+
+@alert-info-border :         darken(spin(@alert-info-bg, 0), 0%);
+
+@alert-warning-text :        #ffc107;
+
+@alert-warning-bg :          lighten(@alert-warning-text, 40%);
+
+@alert-warning-border :      darken(spin(@alert-warning-bg, 0), 0%);
+
+@alert-error-text :          #dc3545;
+
+@alert-error-bg :            lighten(@alert-error-text, 40%);
+
+@alert-error-border :        darken(spin(@alert-error-bg, 0), 0%);
+
+//== 关闭图标 =======
+@close-icon-size:           11px;
+@close-icon-color:          #52575c;
+@close-icon-top:            8px;
+@close-icon-right:          @close-icon-size;
+
+//== 弹出层 模态框 modal =======
+@modal-title-font-weight:    bold;
+@modal-title-line-height:    21px;
+
+@modal-inner-padding :       10px;
+
+@modal-button-left :         @modal-inner-padding;
+
+@modal-title-padding :       @modal-inner-padding;
+@modal-body-padding:         @modal-inner-padding;
+@modal-content-top:          @modal-inner-padding;
+
+@modal-content-bg :                    #fff;
+
+@modal-content-margin-bottom :         @line-height-computed;
+
+@modal-mask-bg :                       fade(@gray-base, 30%);
+@modal-header-border-color:            #e5e5e5;
+@modal-footer-border-color:            @modal-header-border-color;
+
+@modal-confirm-content-padding:        20px;
+@modal-confirm-body-margin-left:       40px;
+
+//== Tag =======
+@tag-white-color:            #7f7f7f;
+@tag-white-bg:               #f6f6f6;
+@tag-pink-bg:                #f5317f;
+@tag-red-bg:                 #f04134;
+@tag-yellow-bg:              #e0c100;
+@tag-orange-bg:              #f56a04;
+@tag-green-bg:               #00a854;
+@tag-cyan-bg:                #00a2ae;
+@tag-blue-bg:                #108ee9;
+@tag-purple-bg:              #7265e6;
+
+@tag-padding-horizontal:     5px;
+@tag-padding-top-white:      3px;
+@tag-padding-top:            4px;
+@tag-padding-left:           @tag-padding-horizontal;
+@tag-padding-right:          @tag-padding-horizontal;
+@tag-padding-bottom:         4px;
+@tag-white-border-color:     #d2d2d2;
+
+//== 加载效果 =======
+
+@loading-horizontal:         20px;
+@loading-horizontal-large:   32px;
+@loading-horizontal-small:   14px;
+@loading-blur:               .5px;
+@loading-blur-opacity:       .7;
+
+@loading-icon-margin-bottom: 5px;
+
+//== GitHub活跃看板 ======
+@calendar-heatmap-fill-text:        #959494;
+@calendar-heatmap-fill:             #196127;
+@calendar-heatmap-stroke-bg:        rgba(0, 0, 0, 0.34);
+@calendar-heatmap-stroke-width:     1px;
+@calendar-heatmap-tooltip-color:    rgba(0, 0, 0, 0.23);
+@calendar-heatmap-popup-size:       16px;
+
+//== Tables ======
+@table-tr-height:                 38px;
+@table-font-weight:               @btn-font-weight+100;
+@table-th-color:                  #616161;
+@table-td-color:                  #fff;
+@table-th-bg-color:               #f7f7f7;
+@table-border-color:              #e9e9e9;
+@table-tr-bg-active-color:        #f7f7f7;
+@table-caption-padding:           8px;
+@table-border-radius:             5px;
+
+// 3px 0 10px -4px rgba(0, 0, 0, 0.2);
+
+@table-shadow-bg :            fade(@gray-base, 20%);
+
+@table-shadow-x :             3px;
+
+@table-shadow-y :             0;
+
+@table-shadow-blur :          10px;
+
+@table-shadow-spread :        -4px;
+
+//== Checkboxs ====
+
+@checkbox-size:                    @font-size-base;
+@checkbox-bg-base:                 #58c373;
+@checkbox-border-gray-light:       #c9c9c9;
+@checkbox-transform-rotate:        33deg;
+@checkbox-border-radius:           3px;
+@checkbox-after-radius:            2px;
+@checkbox-label-padding-left:      3px;
+@checkbox-label-padding-right:     8px;
+@checkbox-indeterminate-size:      8px;
+@checkbox-default-bg-color:        #fff;
+@checkbox-disabled-color:          rgba(0, 0, 0, .3);
+
+//== Input ====
+@input-font-weight:                @btn-font-weight + 100;
+
+//== Switch 分页 ====
+
+@switch-height :                  24px;
+@switch-width :                   45px;
+
+//== Paging 分页 ====
+
+@paging-height:                     28px;
+@paging-lineght-height:             @paging-height;
+@paging-color:                      fade(@gray-base, 50%);
+@paging-disable-color:              fade(@gray-base, 15%);
+@paging-border-color:               #d4d4d4;
+@paging-active-bg-color:            #ececec;
+@paging-hover-bg-color:             #f6f6f6;
+
+@paging-active-shadow-bg :          fade(@gray-base, 20%); // rgba(0, 0, 0, 0.2)
+@paging-active-shadow-x :           0;
+@paging-active-shadow-y :           8px;
+@paging-active-shadow-blur :        42px;
+@paging-active-shadow-spread :      -12px;
+@paging-icon-prev-rotate :          45deg;
+@paging-icon-next-rotate :          -135deg;
+
+//== tooltips 工具提示
+
+@tooltip-max-width :        200px;
+@tooltip-color :            #fff;
+@tooltip-bg :               fade(@gray-base, 75%);
+@tooltip-opacity :          .9;
+@tooltip-arrow-width :      5px;
+@tooltip-arrow-color :      @tooltip-bg;
+
+// Carousel 走马灯
+// ---
+@carousel-dot-width: 16px;
+@carousel-dot-height: 3px;
+@carousel-dot-active-width: 24px;
+
+//== Upload 上传图片 ====
+
+@upload-border-color: #bbb1b1;
+@upload-bg-color: #f1ebeb;
+@upload-button-border-color: #0fa120;
+@upload-font-color: #cac0c0;
+@upload-li-width: 120px;
+@upload-li-height: 100px;
+
+//==  定义屏幕宽度
+//-----------------------
+
+//** 超小屏幕（手机，小于 768px）
+@screen-xs :                480px;
+@screen-xs-min :            @screen-xs;
+@screen-phone :             @screen-xs-min;
+
+//** 小屏幕（平板，大于等于 768px）
+@screen-sm :                576px;
+@screen-sm-min :            @screen-sm;
+@screen-tablet :            @screen-sm-min;
+
+//** 中等屏幕（桌面显示器，大于等于 768px）
+@screen-md :                768px;
+@screen-md-min :            @screen-md;
+@screen-desktop :           @screen-md-min;
+
+//** 大屏幕（大桌面显示器，大于等于 1024px）
+@screen-lg :                1024px;
+@screen-lg-min :            @screen-lg;
+@screen-lg-desktop :        @screen-lg-min;
+
+//移动端 不重叠时最高值
+@screen-xs-max :            (@screen-sm-min - 1);
+@screen-sm-max :            (@screen-md-min - 1);
+@screen-md-max :            (@screen-lg-min - 1);

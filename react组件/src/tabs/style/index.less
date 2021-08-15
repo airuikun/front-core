@@ -1,0 +1,156 @@
+@import "../../style/variables.less";
+@w-tabs:~'w-tabs';
+.@{w-tabs} {
+  position: relative;
+  font-size: 14px;
+  &-content {
+    position: relative;
+  }
+  &-pane {
+    position: absolute;
+    width: 100%;
+    &.is-unmounted {
+      display: none;
+    }
+  }
+  &-bar {
+    position: relative;
+    border-bottom: 1px solid #d9d9d9;
+    z-index: 9;
+  }
+  &-nav-extra {
+    float: right;
+    line-height: 36px;
+  }
+  &-new-tab {
+    width: 21px;
+    height: 21px;
+    line-height: 21px;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    font-size: 12px;
+    color: rgba(0, 0, 0, .65);
+    vertical-align: middle;
+    border-radius: 4px;
+    transition: all .3s;
+    &:hover {
+      color: #1890ff;
+      border-color: #1890ff;
+    }
+  }
+  &-tab {
+    display: inline-block;
+    height: 100%;
+    box-sizing: border-box;
+    position: relative;
+    cursor: pointer;
+    text-decoration: none;
+    i[class^="w-icon-"] {
+      margin-right: 5px;
+      margin-top: -2px;
+      vertical-align: middle;
+    }
+    &.w-disabled {
+      cursor: not-allowed;
+      pointer-events: none;
+      color: rgba(0, 0, 0, .25);
+    }
+    &.w-active {
+      color: #108ee9;
+    }
+  }
+  &-slide {
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    box-sizing: border-box;
+    height: 2px;
+    background-color: #108ee9;
+    width: 50px;
+    transition: all @transition-time @transition-timing-functio;
+  }
+  &-line &-bar {
+    margin-bottom: 16px;
+    outline: none;
+  }
+  &-line &-bar &-tab {
+    padding: 7px 10px;
+    .w-icon-close {
+      margin: -2px 0 0 4px;
+    }
+  }
+}
+
+.@{w-tabs} {
+  &-card &-bar &-tab {
+    margin: 0;
+    border: 1px solid #d9d9d9;
+    border-bottom: 0;
+    padding: 7px 16px;
+    border-radius: 4px 4px 0 0;
+    background: #f9f9f9;
+    margin-right: 2px;
+    bottom: -1px;
+    .w-icon-close {
+      width: 14px;
+      height: 14px;
+      font-size: 12px;
+      margin: -2px 0 0 4px;
+      &:before {
+        margin: 1px 0 0;
+      }
+      &:hover {
+        color: white;
+        border-radius: 50%;
+        background: #dc3545;
+      }
+    }
+    &.w-disabled {
+      border: 1px solid #e8e8e8;
+      border-bottom: 0;
+    }
+    &.w-active {
+      background: #fff;
+      border-color: #d9d9d9;
+      padding-top: 7px;
+      padding-bottom: 8px;
+    }
+  }
+  // 对齐样式
+  &-vertical {
+    &:after,&:before {
+      content: " ";
+      display: table;
+    }
+    &:after {
+      clear: both;
+      visibility: hidden;
+      font-size: 0;
+      height: 0;
+    }
+  }
+  &-vertical &-bar {
+    border-bottom: 0;
+    height: 100%;
+  }
+  &-vertical &-tab {
+    display: block;
+  }
+  &-vertical &-content {
+    overflow: hidden;
+    width: auto;
+  }
+  &-vertical&-left &-bar {
+    float: left;
+    border-right: 1px solid #e9e9e9;
+  }
+  &-vertical&-left &-content {
+    padding-left: 24px;
+  }
+  &-vertical&-right &-bar {
+    float: right;
+    border-left: 1px solid #e9e9e9;
+  }
+}

@@ -1,0 +1,35 @@
+@import "../../style/variables.less";
+@import "../../style/mixins/index.less";
+
+@w-breadcrumb:~"w-breadcrumb";
+
+.@{w-breadcrumb} {
+  color: #595959;
+  font-size: 14px;
+  line-height: 1.5;
+  &-item:last-child {
+    color: #c0c0c0;
+  }
+  &-item:last-child &-item-separator {
+    display: none;
+  }
+  a {
+    color: #595959;
+    &:hover {
+      color: #3d90f2;
+    }
+  }
+  i[class^="w-icon-"] {
+    vertical-align: middle;
+    margin-top: -3px;
+  }
+  &-item-inner {
+    > i[class^="w-icon-"] + span {
+      margin-left: 5px;
+    }
+  }
+  &-item-separator {
+    margin: 0 8px;
+    color: #adadad;
+  }
+}

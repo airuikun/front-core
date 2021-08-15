@@ -1,0 +1,102 @@
+@w-progress-prefix: ~"w-progress";
+
+.@{w-progress-prefix} {
+  position: relative;
+  line-height: 1;
+  display: inline-block;
+  &-line {
+    width: 100%;
+    font-size: 12px;
+  }
+  &-bar {
+    display: inline-block;
+    width: 100%;
+    vertical-align: middle;
+  }
+  &-status-active &-bg {
+    background-image: linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+    background-size: 12px 12px;
+    animation: progress-bar-stripes 1s linear infinite;
+    &:before {
+      content: " ";
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: #fff;
+      border-radius: 10px;
+      animation: w-progress-active 2.4s cubic-bezier(0.23, 1, 0.32, 1) infinite;
+    }
+  }
+  &-status-exception {
+    .@{w-progress-prefix}-bg {
+      background-color: #dc3545;
+    }
+    .@{w-progress-prefix}-text {
+      color: #dc3545;
+    }
+  }
+  &-status-success {
+    .@{w-progress-prefix}-bg {
+      background-color: #28a745;
+    }
+    .@{w-progress-prefix}-text {
+      color: #28a745;
+    }
+  }
+  &-show-text &-bar {
+    margin-right: -50px;
+    padding-right: 50px;
+  }
+  &-inner {
+    height: 100%;
+    width: 100%;
+    background-color: #f7f7f7;
+  }
+  &-bg {
+    height: 100%;
+    border-radius: 100px;
+    background-color: #108ee9;
+    transition: all .4s cubic-bezier(.08, .82, .17, 1) 0s;
+    position: relative;
+  }
+  &-text {
+    color: #48576a;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px;
+    line-height: 1;
+  }
+  &-circle &-text {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    transform: translate(0, -50%);
+    font-size: 16px;
+  }
+}
+
+@keyframes progress-bar-stripes {
+  from { background-position: 0 0; }
+  to { background-position: 24px 0; }
+}
+
+@keyframes w-progress-active {
+  0% {
+    opacity: 0.1;
+    width: 0;
+  }
+  20% {
+    opacity: 0.5;
+    width: 0;
+  }
+  100% {
+    opacity: 0;
+    width: 100%;
+  }
+}

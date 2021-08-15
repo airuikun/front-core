@@ -1,0 +1,186 @@
+@import "../../style/variables.less";
+@import "../../style/mixins/index.less";
+
+@w-btn:~"w-btn";
+
+.@{w-btn} {
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+  margin: 0;
+  font-weight: @btn-font-weight;
+  text-align: center;
+  touch-action: manipulation;
+  cursor: pointer;
+  border: 1px solid transparent;
+  background-image: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  transition: all @transition-time @transition-timing-functio;
+  .button-size(@padding-base-vertical, @padding-base-horizontal, @font-size-base, @line-height-base, @btn-border-radius-base);
+  user-select: none;
+  outline: 0;
+  i >, > span {
+    pointer-events: none;
+    vertical-align: middle;
+    line-height: 1;
+  }
+  & + &, & + &-group, &-group + &, &-group + &-group {
+    margin-left: 5px;
+  }
+  &:active,
+  &.active {
+    &:focus,
+    &.focus {
+      .tab-focus()
+    }
+  }
+  &:hover,
+  &:focus,
+  &.focus {
+    color: @btn-default-color;
+    text-decoration: none;
+  }
+  &:active, &.active {
+    outline: 0;
+    background-image: none;
+    box-shadow: inset 0 8px 15px -10px rgba(0, 0, 0, 0.2);
+  }
+  &.disabled, &[disabled] {
+    cursor: @cursor-disabled;
+    opacity: .75;
+    box-shadow: none;
+    &, &:hover {
+      color: rgba(255, 255, 255, 0.6);
+    }
+  }
+  &&-link.disabled {
+    color: #a0a0a0;
+  }
+  &.block {
+    display: block;
+    width: 100%;
+  }
+  &.block + &.block {
+    margin-top: 8px;
+    margin-left: 0;
+  }
+  &.w-btn-loading {
+    &:before {
+      content: '';
+      display: inline-block;
+      animation: loading-rotate .6s linear infinite;
+    }
+  }
+  &.w-transition-base.disabled:after,
+  &.w-transition-base[disabled]:after {
+    display: none;
+  }
+}
+
+// 基础过渡动画四处使用
+.w-transition-base:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  background-image: radial-gradient(circle, #000 10%, transparent 10.01%);
+  background-repeat: no-repeat;
+  background-position: 50%;
+  transform: scale(10);
+  opacity: 0;
+  transition: transform .5s, opacity 1s;
+}
+.w-transition-base:active:after {
+  transform: scale(0);
+  opacity: .2;
+  transition: 0s;
+}
+
+@keyframes loading-rotate {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+// 备用按钮样式
+// --------------------------------------------------
+
+.w-btn-default {
+  .button-loading(@btn-loading-small,@btn-default-border, transparent);
+  .button-variant(@btn-default-color, @btn-default-bg, @btn-default-border);
+}
+
+.w-btn-primary {
+  .button-loading(@btn-loading-small,@btn-primary-color, transparent);
+  .button-variant(@btn-primary-color, @btn-primary-bg, transparent);
+}
+
+// 成功将显示为绿色
+.w-btn-success {
+  .button-loading(@btn-loading-small,@btn-primary-color, transparent);
+  .button-variant(@btn-success-color, @btn-success-bg, transparent);
+}
+
+// 信息显示为 蓝色
+.w-btn-info {
+  .button-loading(@btn-loading-small,@btn-primary-color, transparent);
+  .button-variant(@btn-info-color, @btn-info-bg, @btn-info-bg);
+}
+
+// 警告显示为橘黄色
+.w-btn-warn {
+  .button-loading(@btn-loading-small,@btn-primary-color, transparent);
+  .button-variant(@btn-warning-color, @btn-warning-bg, transparent);
+}
+
+// 危险显示为红色
+.w-btn-danger {
+  .button-loading(@btn-loading-small,@btn-primary-color, transparent);
+  .button-variant(@btn-danger-color, @btn-danger-bg, transparent);
+}
+
+// 危险显示为红色
+.w-btn-link {
+  .button-loading(@btn-loading-small,@btn-primary-color, transparent);
+  .button-variant(@btn-link-color, transparent, transparent);
+  &:hover {
+    color: darken(@btn-link-color, 12%);
+  }
+  &:active,&.active {
+    box-shadow: none;
+    color: darken(@btn-link-color, 32%);
+  }
+}
+
+// Button Sizes
+// --------------------------------------------------
+//
+// 'extra-small',   //（超小尺寸）Extra small button
+// 'small',         //（小按钮）Small button
+// 'default',       //（默认尺寸）Default button
+// 'large',         //（大按钮）Large button
+
+.w-btn-size-mini {
+  .button-size-loading(@btn-extra-small-top, ceil(@font-size-base * 0.70));
+  //（超小尺寸）mini button
+  .button-size(@padding-mini-vertical, @padding-mini-horizontal, @font-size-small, @line-height-mini, @btn-border-radius-small);
+}
+.w-btn-size-small {
+  .button-size-loading(@btn-extra-small-top,@font-size-small);
+  //（小按钮）Small button
+  .button-size(@padding-small-vertical, @padding-small-horizontal, @font-size-small, @line-height-small, @btn-border-radius-small);
+}
+.w-btn-size-default {
+  .button-size-loading(@btn-extra-small-top,@font-size-base);
+  //（默认尺寸）Default button
+}
+.w-btn-size-large {
+  .button-size-loading(@btn-extra-small-top,@font-size-large);
+  //（大按钮）Large button
+  .button-size(@padding-large-vertical, @padding-large-horizontal, @font-size-large, @line-height-large, @btn-border-radius-large);
+}

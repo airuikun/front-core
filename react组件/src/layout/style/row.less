@@ -1,0 +1,51 @@
+
+.w-row {
+  &:after,&:before {
+    content: "";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+.w-row-flex {
+  display: flex;
+  &:before,
+  &:after {
+    display: none;
+  }
+
+  &.w-row-justify-center {
+    justify-content: center;
+  }
+  &.w-row-justify-end {
+    justify-content: flex-end;
+  }
+  // start 不用设置
+  // &.w-row-justify-start {
+  //   justify-content: flex-start;
+  // }
+  &.w-row-justify-space-between {
+    justify-content: space-between;
+  }
+  &.w-row-justify-space-around {
+    justify-content: space-around;
+  }
+  // top 不用设置样式
+  // &.w-row-align-top {
+  //   align-items: flex-start;
+  // }
+  &.w-row-align-middle {
+    align-items: center;
+  }
+  &.w-row-align-baseline {
+    align-items: baseline;
+  }
+  &.w-row-align-bottom {
+    align-items: flex-end;
+  }
+  &.w-row-align-stretch {
+    align-items: stretch;
+  }
+}

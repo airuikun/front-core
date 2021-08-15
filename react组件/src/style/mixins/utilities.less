@@ -1,0 +1,14 @@
+
+.w-close-icon(@color) {
+  position: absolute;
+  color: @color;
+  cursor: pointer;
+  &:hover {
+    svg path {
+      fill: @color;
+    }
+  }
+  svg path {
+    fill: fade(@color, 30%);
+  }
+}

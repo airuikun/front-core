@@ -1,0 +1,159 @@
+@import "../../style/variables.less";
+@import "../../style/mixins/index.less";
+@w-modal:~"w-modal";
+.@{w-modal} {
+  position: fixed;
+  &-wrap {
+    overflow: auto;
+    top: 0;
+    right: 0;
+    left: 0;
+    outline: 0;
+    bottom: 0;
+    z-index: @zindex-modal;
+    -webkit-overflow-scrolling: touch;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    padding-bottom: 40px;
+  }
+  &:before {
+    content: " ";
+    display: inline-block;
+    height: 100%;
+    width: 1%;
+    vertical-align: middle;
+  }
+  &.@{w-modal}-confirm {
+    &.warn .@{w-modal}-confirm-icon {
+      color: #ffc107;
+    }
+    &.info .@{w-modal}-confirm-icon {
+      color: #007bff;
+    }
+    &.error .@{w-modal}-confirm-icon {
+      color: #dc3545;
+    }
+    &.success .@{w-modal}-confirm-icon {
+      color: #28a745;
+    }
+    .@{w-modal}-header {
+      display: none;
+    }
+    .@{w-modal}-footer {
+      border: 0;
+    }
+    .@{w-modal}-content {
+      padding: @modal-confirm-content-padding;
+      position: relative;
+    }
+    .@{w-modal}-confirm-title {
+      padding-bottom: @line-height-computed;
+      font-size: @font-size-base;
+      font-weight: @modal-title-font-weight;
+    }
+    .@{w-modal}-confirm-title, .@{w-modal}-confirm-content {
+      margin-left: @modal-confirm-body-margin-left;
+    }
+    .@{w-modal}-confirm-icon {
+      float: left;
+      line-height: 22px;
+      font-size: 22px;
+      [class^="w-icon-"], [class*=" w-icon-"] {
+        font-size: 22px;
+      }
+    }
+  }
+  &-mask {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    content: '';
+    background-color: @modal-mask-bg;
+    z-index: @zindex-modal-mask;
+  }
+  &-header {
+    padding: @modal-title-padding;
+    line-height: @modal-title-line-height;
+    border-bottom: 1px solid @modal-footer-border-color;
+  }
+  &-dragable {
+    cursor: move;
+    user-select: none;
+  }
+  &-resizeable {
+    cursor: nwse-resize;
+    user-select: none;
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    bottom: -5px;
+    right: -5px;
+  }
+  &-title {
+    font-weight: @modal-title-font-weight;
+    font-size: @font-size-base;
+  }
+  &-close-icon {
+    width: @close-icon-size;
+    height: @close-icon-size;
+    top: @close-icon-top;
+    right: @close-icon-right;
+    .w-close-icon(@close-icon-color);
+  }
+  &-footer {
+    padding: @modal-inner-padding;
+    border-top: 1px solid @modal-footer-border-color;
+    text-align: right;
+    button + button {
+      margin-left: @modal-button-left;
+    }
+  }
+  &-body {
+    padding: @modal-body-padding;
+    font-size: @font-size-small;
+    line-height: @line-height-small;
+  }
+  &-content {
+    position: relative;
+    top: @modal-content-top;
+    text-align: left;
+    margin: 0 auto;
+    overflow: hidden;
+    background-color: @modal-content-bg;
+    border-radius: @border-radius-large;
+    box-shadow: @box-shadow-x @box-shadow-y @box-shadow-blur @box-shadow-spread @box-shadow-bg;
+    vertical-align: middle;
+    display: inline-block;
+  }
+
+  &-horizontal-left, &-horizontal-right {
+    .@{w-modal}-content {
+      border-radius: 0;
+      top: 0;
+      bottom: 0;
+      float: right;
+      overflow: auto;
+      position: absolute;
+      margin-bottom: 0;
+    }
+    .@{w-modal}-footer {
+      border-top: 0;
+      text-align: left;
+      padding-top: 0;
+    }
+  }
+  &-horizontal-right {
+    .@{w-modal}-content {
+      right: 0;
+    }
+  }
+  &-horizontal-left {
+    .@{w-modal}-content {
+      left: 0;
+    }
+  }
+}
+

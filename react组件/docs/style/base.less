@@ -1,0 +1,256 @@
+@import "./code.less";
+body {
+  color: #343b41;
+  a {
+    color: #328dd0;
+    &:hover {
+      color: #0089ff;
+    }
+  }
+}
+body::selection {
+    background: #0fa120;
+    color: #fff;
+}
+
+.w-doc-loading-warpper {
+
+  height: 100%;
+  width: 100%;
+}
+
+.w-doc-loading {
+  padding: 15px;
+}
+
+#app {
+  min-height: 100%;
+  height: 100%;
+}
+.w-docs {
+  height: 100%;
+}
+.w-docs-menu-warpper {
+  height: 100%;
+  width: 220px;
+  position: fixed;
+  font-weight: 300;
+  background-color: #343a40;
+  overflow: auto;
+  .w-docs-menu-content {
+    padding: 20px 0 30px;
+    .w-docs-info {
+      padding: 20px 0;
+      border-top: 1px solid rgba(0, 0, 0, 0.12);
+      margin-top: 20px;
+    }
+  }
+  .active {
+    color: #909090;
+    font-size: 14px;
+    background-color: rgba(0, 0, 0, 0.12);
+    text-decoration: none;
+    padding: 6px 24px 6px 10px;
+    margin-left: 10px;
+    font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  a {
+    color: #fff;
+    display: block;
+    padding: 6px 24px 6px 20px;
+    font-size: 14px;
+    transition: background-color .7s ease;
+    &:active {
+      text-decoration: none;
+    }
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.23);
+      color: #e6e6e6;
+    }
+  }
+}
+
+.w-docs-logo {
+  padding-bottom: 20px;
+  padding-left: 15px;
+  img,span {
+    vertical-align: middle;
+  }
+  img {
+    width: 30px;
+    margin-right: 10px;
+  }
+  span {
+    color: #fff;
+    font-size: 18px;
+  }
+  a {
+    display: inline-block;
+    padding: 0;
+  }
+  a:hover {
+    background-color: transparent;
+    text-decoration: none;
+  }
+  a:focus {
+    text-decoration: none;
+  }
+  .version {
+    font-size: 12px;
+    color: #6f6f6f;
+  }
+  sup {
+    color: #6f6f6f;
+  }
+}
+
+.w-docs-menu-list {
+  li.title {
+    padding: 10px 0 12px 20px;
+    color: #909090;
+    font-size: 14px;
+    text-shadow: 0 1px rgba(0, 0, 0, 0.26);
+  }
+  li {
+    margin: 0;
+    list-style: none;
+  }
+}
+.w-docs-menu-item {
+  a {
+    text-shadow: 0 1px rgba(0, 0, 0, 0.31);
+  }
+}
+
+.w-docs-content {
+  color: #333;
+  margin-left: 220px;
+  .w-docs-totop {
+    background: rgba(0, 0, 0, 0.25);
+    height: 20px;
+    padding: 7px 0 0;
+    width: 20px;
+    border-radius: 3px;
+    &:before {
+      content: " ";
+      display: block;
+      width: 0;
+      height: 0;
+      border-width: 0 5px 5px;
+      border-style: solid;
+      border-color: transparent transparent #333;
+      margin: 0 auto;
+      position: relative;
+    }
+  }
+}
+
+.w-docs-content-warpper {
+  font-size: 14px;
+  padding: 20px;
+  color: rgba(0, 0, 0, .65);
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+    color: #353535;
+  }
+  h1 {
+    padding: 10px 0 10px 5px;
+    margin: 0 0 10px;
+    border-bottom: 1px solid #e3e3e3;
+  }
+  h2 {
+    margin: 20px 0 10px;
+    font-size: 1.5em;
+    &:first-child {
+      margin: 0;
+    }
+  }
+  h3 {
+    margin: 20px 0 5px;
+  }
+  code {
+    color: #4a4a4a;
+    padding: 0 3px;
+    padding: 2px 3px;
+    margin: 0 2px;
+    font-size: 85%;
+    background-color: rgba(27, 31, 35, 0.05);
+    border-radius: 3px;
+  }
+  pre > code {
+    overflow: auto;
+    font-size: 85%;
+    line-height: 1.45;
+    border-radius: 3px;
+    font-weight: 300;
+    color: #353535;
+    padding: 0;
+    display: block;
+    background: transparent !important;
+  }
+  p {
+    padding: 5px 0;
+    margin-bottom: 10px;
+  }
+  & > table, .w-docs-demo-des > table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    th {
+      background: #f6f6f6;
+    }
+    td,th {
+      border: 1px solid #e9e9e9;
+      padding: 8px 12px;
+    }
+  }
+}
+// demo
+.w-docs-demo-warpper {
+  border: 1px solid #d5d5d5;
+  border-radius: 4px;
+  margin-top: 10px;
+  .w-docs-demo-source {
+    padding: 20px;
+  }
+  .w-docs-demo-meta {
+    // transition: .3s;
+    transition: all 0.7s ease;
+    overflow: hidden;
+  }
+  .w-docs-demo-des {
+    padding: 10px;
+    border-top: 1px solid #d5d5d5;
+    p {
+      margin: 0;
+    }
+  }
+  .w-docs-demo-highlight {
+    background-color: #efefef;
+    padding: 0;
+    overflow: auto;
+    pre[class*="language-"] {
+      margin-bottom: 0;
+    }
+  }
+  .w-docs-demo-control {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.03);
+    border-top: 1px solid #d5d5d5;
+    span {
+      padding: 5px 10px;
+      display: inline-block;
+    }
+  }
+}
+
+.w-docs-docinfo {
+  text-align: center;
+  padding: 15px 0 60px;
+  margin: 0 20px;
+  line-height: 24px;
+  color: #909090;
+}

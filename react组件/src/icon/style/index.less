@@ -1,0 +1,26 @@
+@import "~uiw-iconfont/fonts/w-iconfont.less";
+
+.w-icon-spin:before {
+  animation: loading-circle 1s infinite linear;
+}
+[class^="w-icon-"], [class*=" w-icon-"] {
+  line-height: initial;
+  display: inline-block;
+  // vertical-align: middle;
+  font-style: normal;
+  vertical-align: middle;
+  text-align: center;
+  text-transform: none;
+}
+[class^="w-icon-"]:before, {
+  display: block;
+}
+
+@keyframes loading-circle {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
