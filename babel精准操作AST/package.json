@@ -1,0 +1,21 @@
+{
+  "name": "traverse",
+  "version": "1.0.0",
+  "description": "",
+  "main": "demo.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/generator": "7.13.9",
+    "@babel/parser": "7.13.13",
+    "@babel/traverse": "7.13.13",
+    "babel-preset-es2015": "6.24.1",
+    "babel-types": "6.26.0"
+  },
+  "devDependencies": {
+    "@babel/types": "7.13.14"
+  }
+}

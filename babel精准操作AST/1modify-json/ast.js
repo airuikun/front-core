@@ -1,0 +1,196 @@
+const a = {
+  type: "File",
+  start: 0,
+  end: 131,
+  loc: { start: { line: 1, column: 0 }, end: { line: 8, column: 0 } },
+  errors: [],
+  program: {
+    type: "Program",
+    start: 0,
+    end: 131,
+    loc: { start: { line: 1, column: 0 }, end: { line: 8, column: 0 } },
+    sourceType: "script",
+    interpreter: null,
+    body: [
+      {
+        type: "ExpressionStatement",
+        start: 0,
+        end: 130,
+        loc: { start: { line: 1, column: 0 }, end: { line: 7, column: 2 } },
+        expression: {
+          type: "AssignmentExpression",
+          start: 0,
+          end: 129,
+          loc: { start: { line: 1, column: 0 }, end: { line: 7, column: 1 } },
+          operator: "=",
+          left: {
+            type: "MemberExpression",
+            start: 0,
+            end: 14,
+            loc: {
+              start: { line: 1, column: 0 },
+              end: { line: 1, column: 14 },
+            },
+            object: {
+              type: "Identifier",
+              start: 0,
+              end: 6,
+              loc: {
+                start: { line: 1, column: 0 },
+                end: { line: 1, column: 6 },
+                identifierName: "module",
+              },
+              name: "module",
+            },
+            computed: false,
+            property: {
+              type: "Identifier",
+              start: 7,
+              end: 14,
+              loc: {
+                start: { line: 1, column: 7 },
+                end: { line: 1, column: 14 },
+                identifierName: "exports",
+              },
+              name: "exports",
+            },
+          },
+          right: {
+            type: "ArrayExpression",
+            start: 17,
+            end: 129,
+            loc: {
+              start: { line: 1, column: 17 },
+              end: { line: 7, column: 1 },
+            },
+            extra: { trailingComma: 126 },
+            elements: [
+              {
+                type: "ObjectExpression",
+                start: 21,
+                end: 126,
+                loc: {
+                  start: { line: 2, column: 2 },
+                  end: { line: 6, column: 3 },
+                },
+                extra: { trailingComma: 121 },
+                properties: [
+                  {
+                    type: "ObjectProperty",
+                    start: 27,
+                    end: 47,
+                    loc: {
+                      start: { line: 3, column: 4 },
+                      end: { line: 3, column: 24 },
+                    },
+                    method: false,
+                    key: {
+                      type: "Identifier",
+                      start: 27,
+                      end: 38,
+                      loc: {
+                        start: { line: 3, column: 4 },
+                        end: { line: 3, column: 15 },
+                        identifierName: "description",
+                      },
+                      name: "description",
+                    },
+                    computed: false,
+                    shorthand: false,
+                    value: {
+                      type: "StringLiteral",
+                      start: 40,
+                      end: 47,
+                      loc: {
+                        start: { line: 3, column: 17 },
+                        end: { line: 3, column: 24 },
+                      },
+                      extra: { rawValue: "和孤鸿寡鹄", raw: '"和孤鸿寡鹄"' },
+                      value: "会敏",
+                    },
+                  },
+                  {
+                    type: "ObjectProperty",
+                    start: 53,
+                    end: 91,
+                    loc: {
+                      start: { line: 4, column: 4 },
+                      end: { line: 4, column: 42 },
+                    },
+                    method: false,
+                    key: {
+                      type: "Identifier",
+                      start: 53,
+                      end: 62,
+                      loc: {
+                        start: { line: 4, column: 4 },
+                        end: { line: 4, column: 13 },
+                        identifierName: "localPath",
+                      },
+                      name: "localPath",
+                    },
+                    computed: false,
+                    shorthand: false,
+                    value: {
+                      type: "StringLiteral",
+                      start: 64,
+                      end: 91,
+                      loc: {
+                        start: { line: 4, column: 15 },
+                        end: { line: 4, column: 42 },
+                      },
+                      extra: {
+                        rawValue: "/dist/qq/vendor/bundle.js",
+                        raw: '"/dist/qq/vendor/bundle.js"',
+                      },
+                      value: "/dist/qq/vendor/bundle.js",
+                    },
+                  },
+                  {
+                    type: "ObjectProperty",
+                    start: 97,
+                    end: 121,
+                    loc: {
+                      start: { line: 5, column: 4 },
+                      end: { line: 5, column: 28 },
+                    },
+                    method: false,
+                    key: {
+                      type: "Identifier",
+                      start: 97,
+                      end: 105,
+                      loc: {
+                        start: { line: 5, column: 4 },
+                        end: { line: 5, column: 12 },
+                        identifierName: "filename",
+                      },
+                      name: "filename",
+                    },
+                    computed: false,
+                    shorthand: false,
+                    value: {
+                      type: "StringLiteral",
+                      start: 107,
+                      end: 121,
+                      loc: {
+                        start: { line: 5, column: 14 },
+                        end: { line: 5, column: 28 },
+                      },
+                      extra: {
+                        rawValue: "qq-bundle.js",
+                        raw: '"qq-bundle.js"',
+                      },
+                      value: "qq-bundle.js",
+                    },
+                  },
+                ],
+              },
+            ],
+          },
+        },
+      },
+    ],
+    directives: [],
+  },
+  comments: [],
+};
