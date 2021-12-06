@@ -52,6 +52,7 @@ const updateRoutesViews = () => {
   // 结果写入文件
   // 解决中文为unicode乱码的问题 jsescOption: { minimal: true }
   const result = generate(configJsTree, { jsescOption: { minimal: true } }, "").code;
+  console.log('转化后的结果', result);
   fs.writeFileSync(resultPath, result);
 };
 
