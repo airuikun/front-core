@@ -1,0 +1,137 @@
+const a = {
+  type: "File",
+  start: 0,
+  end: 64,
+  loc: { start: { line: 1, column: 0 }, end: { line: 2, column: 37 } },
+  errors: [],
+  program: {
+    type: "Program",
+    start: 0,
+    end: 64,
+    loc: { start: { line: 1, column: 0 }, end: { line: 2, column: 37 } },
+    sourceType: "module",
+    interpreter: null,
+    body: [
+      {
+        type: "ImportDeclaration",
+        start: 0,
+        end: 26,
+        loc: { start: { line: 1, column: 0 }, end: { line: 1, column: 26 } },
+        specifiers: [
+          {
+            type: "ImportDefaultSpecifier",
+            start: 7,
+            end: 12,
+            loc: {
+              start: { line: 1, column: 7 },
+              end: { line: 1, column: 12 },
+            },
+            local: {
+              type: "Identifier",
+              start: 7,
+              end: 12,
+              loc: {
+                start: { line: 1, column: 7 },
+                end: { line: 1, column: 12 },
+                identifierName: "react",
+              },
+              name: "react",
+            },
+          },
+        ],
+        importKind: "value",
+        source: {
+          type: "StringLiteral",
+          start: 18,
+          end: 25,
+          loc: { start: { line: 1, column: 18 }, end: { line: 1, column: 25 } },
+          extra: { rawValue: "react", raw: "'react'" },
+          value: "react",
+        },
+      },
+      {
+        type: "ImportDeclaration",
+        start: 27,
+        end: 64,
+        loc: { start: { line: 2, column: 0 }, end: { line: 2, column: 37 } },
+        specifiers: [
+          {
+            type: "ImportSpecifier",
+            start: 36,
+            end: 42,
+            loc: {
+              start: { line: 2, column: 9 },
+              end: { line: 2, column: 15 },
+            },
+            imported: {
+              type: "Identifier",
+              start: 36,
+              end: 42,
+              loc: {
+                start: { line: 2, column: 9 },
+                end: { line: 2, column: 15 },
+                identifierName: "Button",
+              },
+              name: "Button",
+            },
+            importKind: null,
+            local: {
+              type: "Identifier",
+              start: 36,
+              end: 42,
+              loc: {
+                start: { line: 2, column: 9 },
+                end: { line: 2, column: 15 },
+                identifierName: "Button",
+              },
+              name: "Button",
+            },
+          },
+          {
+            type: "ImportSpecifier",
+            start: 44,
+            end: 49,
+            loc: {
+              start: { line: 2, column: 17 },
+              end: { line: 2, column: 22 },
+            },
+            imported: {
+              type: "Identifier",
+              start: 44,
+              end: 49,
+              loc: {
+                start: { line: 2, column: 17 },
+                end: { line: 2, column: 22 },
+                identifierName: "Input",
+              },
+              name: "Input",
+            },
+            importKind: null,
+            local: {
+              type: "Identifier",
+              start: 44,
+              end: 49,
+              loc: {
+                start: { line: 2, column: 17 },
+                end: { line: 2, column: 22 },
+                identifierName: "Input",
+              },
+              name: "Input",
+            },
+          },
+        ],
+        importKind: "value",
+        source: {
+          type: "StringLiteral",
+          start: 57,
+          end: 63,
+          loc: { start: { line: 2, column: 30 }, end: { line: 2, column: 36 } },
+          extra: { rawValue: "antd", raw: "'antd'" },
+          value: "antd",
+        },
+      },
+    ],
+    directives: [],
+  },
+  comments: [],
+};

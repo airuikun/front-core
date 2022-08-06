@@ -4,7 +4,7 @@
   "description": "",
   "main": "demo.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node 5import-merge/index.js"
   },
   "author": "",
   "license": "ISC",
